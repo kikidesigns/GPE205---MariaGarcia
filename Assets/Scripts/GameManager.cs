@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     //prefabs
     public GameObject playerControllerPrefab;
     public GameObject tankPawnPrefab;
+    
+    //list that holds players
+    public List<PlayerController> players;
+
 
     // awake is called before start can run
     private void Awake()
@@ -49,9 +53,13 @@ public class GameManager : MonoBehaviour
         //hook them up
         newController.pawn = newPawn;
     }
-        private void Start()
+        public void Start()
     {
         //temp code
         SpawnPlayer();
+
+
     }
+
+
 }
