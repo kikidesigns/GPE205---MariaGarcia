@@ -23,19 +23,19 @@ public class PlayerController : Controller
     }
     public override void ProcessInputs()
     {
-        if (Input.GetKey(moveforwardKey))
+        if (Input.GetKey(moveForwardKey))
         {
             pawn.MoveForward();
         }
-        if(Input.GetKey(moveBackwardKey)
+        if(Input.GetKey(moveBackwardKey))
         {
             pawn.MoveBackward();
-        })
+        }
         if(Input.GetKey(rotateClockwiseKey))
         {
             pawn.RotateClockwise();
         }
-        If(Input.GetKey(rotateCounterClockwiseKey))
+        if(Input.GetKey(rotateCounterClockwiseKey))
         {
             pawn.RotateCounterClockwise();
         }
