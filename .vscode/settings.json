@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GPE205_take1.sln"
+    "dotnet.defaultSolution": "GPE205 - MariaGarcia.sln"
 }
