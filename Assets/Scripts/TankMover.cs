@@ -12,14 +12,14 @@ public class TankMover : Mover
         //get rigidbody component
         rb = GetComponent<Rigidbody>();
     }
-    public override void Move(Vector3 direction, float speed)
+    public override void Move(Vector3 direction, float moveSpeed)
     {
-        Vector3 moveVector = direction.normalized * speed * Time.deltaTime;
+        Vector3 moveVector = direction.normalized * moveSpeed * Time.deltaTime;
         rb.MovePosition(rb.position + moveVector);
     }
-    public override void Rotate(float rSpeed)
+    public override void Rotate(float rotateSpeed)
     {
-        float modifiedSpeed = rSpeed * Time.deltaTime;
+        float modifiedSpeed = rotateSpeed * Time.deltaTime;
         transform.Rotate(0, modifiedSpeed, 0);
     }
 }
