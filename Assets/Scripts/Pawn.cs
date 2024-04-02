@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public abstract class Pawn : MonoBehaviour
 {
     // Variable for move speed
@@ -14,9 +15,33 @@ public abstract class Pawn : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {        
+        
         mover = GetComponent<Mover>();
+     //if we have a game manager
+        if (GameManager.instance != null)
+        {
+            //and tracks controller
+            if (GameManager.instance.pawns != null)
+            {
+                //register with gamemanager
+                GameManager.instance.pawns.Add(this);
+            }
+        }
     }
 
+    public void OnDestroy()
+    {
+        //if we have a  gamemanager
+        if(GameManager.instance != null)
+        {
+            //and it tracks the player
+            if(GameManager.instance.pawns != null)
+            {
+                //deregister with the gamemanager
+                GameManager.instance.pawns.Remove(this);
+            }
+        }
+    }
     // Update is called once per frame
     public virtual void Update()
     {       

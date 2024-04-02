@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     
     //list that holds players
     public List<PlayerController> players;
+    public List<Controller> controllers;
+    public List<Pawn> pawns;
 
 
     // awake is called before start can run

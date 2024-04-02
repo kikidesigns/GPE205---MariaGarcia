@@ -61,7 +61,7 @@ public class PlayerController : Controller
             pawn.RotateCounterClockwise();
         }
     }
-        public void OnDestroy()
+        public new void OnDestroy()
     {
         //if we have a  gamemanager
         if(GameManager.instance != null)
