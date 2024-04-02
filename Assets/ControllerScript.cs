@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ControllerScript : MonoBehaviour
+public abstract class Controller : MonoBehaviour
 {
     //variable to hold pawn
     public Pawn pawn;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : ControllerScript
+public class PlayerController : Controller
 {
     public KeyCode moveForwardKey;
     public KeyCode moveBackwardKey;
