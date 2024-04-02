@@ -385,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97707ba1ec1d35645aca506767347908, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.428
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97707ba1ec1d35645aca506767347908, type: 3}
       propertyPath: m_LocalPosition.z
@@ -475,7 +475,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.7887652
+  m_Radius: 0.55
   m_Center: {x: 0.0078087747, y: 0.48623472, z: 0.111234754}
 --- !u!54 &1596201665
 Rigidbody:
@@ -590,7 +590,7 @@ Transform:
   m_GameObject: {fileID: 1888653806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: -0.38, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
