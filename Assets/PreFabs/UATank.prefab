@@ -68,6 +68,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97707ba1ec1d35645aca506767347908, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6433162636542676599}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97707ba1ec1d35645aca506767347908, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4642034177785899337}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97707ba1ec1d35645aca506767347908, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4500537045482365648}
   m_SourcePrefab: {fileID: 100100000, guid: 97707ba1ec1d35645aca506767347908, type: 3}
 --- !u!1 &6192806820656894308 stripped
 GameObject:
@@ -87,8 +93,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  turnSpeed: 18
+  turnSpeed: 40
   mover: {fileID: 6433162636542676599}
+  shooter: {fileID: 0}
+  shellPrefab: {fileID: 0}
+  fireForce: 1000
+  damageDone: 2
+  shellLifespan: 1.5
 --- !u!54 &143710084202721322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,3 +160,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4c8a4aab6ddfd46820d15298fa29a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4642034177785899337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192806820656894308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8850b37581267dd48af0447e9012d7a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firepointTransform: {fileID: 0}
+--- !u!114 &-4500537045482365648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192806820656894308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b22a134e4977645a824d0237942d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  maxHealth: 10
