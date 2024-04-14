@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
-    //hold a Transform component that we want to fire from
-    public Transform firePointTransform;
+
 
     // Start is called before the first frame update
     public override void Start()
