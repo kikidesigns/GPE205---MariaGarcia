@@ -11,12 +11,17 @@ public abstract class Pawn : MonoBehaviour
     public float turnSpeed;
     //variable for mover
     public Mover mover;
+    //variable to hold our shooter
+    public Shooter shooter;
+    
 
     // Start is called before the first frame update
     public virtual void Start()
     {        
         
         mover = GetComponent<Mover>();
+        shooter = GetComponent<Shooter>();
+
      //if we have a game manager
         if (GameManager.instance != null)
         {
@@ -51,4 +56,7 @@ public abstract class Pawn : MonoBehaviour
     public abstract void MoveBackward();
     public abstract void RotateClockwise();
     public abstract void RotateCounterClockwise();
+    
+    //functions to shoot
+    public abstract void Shoot();
 }

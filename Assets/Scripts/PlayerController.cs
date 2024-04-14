@@ -16,8 +16,12 @@ public class PlayerController : Controller
     {
         // Run the Start() function from the parent (base) class
         base.Start();
+        
+            //get tank pawn component ???????? should i do this ????????
+            //pawn = GetComponent<TankPawn>();
 
-                //if we have a game manager
+
+            //if we have a game manager
         if (GameManager.instance != null)
         {
             //and tracks players
@@ -64,7 +68,7 @@ public class PlayerController : Controller
 
         if (Input.GetKeyDown(shootKey))
         {
-            pawn.shoot();
+            pawn.Shoot();
         }
     }
         public new void OnDestroy()

@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
-
+    //variable for shell prefab
+    public GameObject shellPrefab;
+    //variable for firing force
+    public float fireForce;
+    //variable for damage done
+    public float damageDone;
+    // variable fro how long bullets survive if they dont collide
+    public float shellLifespan;
 
     // Start is called before the first frame update
     public override void Start()
@@ -40,6 +47,12 @@ public class TankPawn : Pawn
     {
         Debug.Log("Rotate Counter-Clockwise");
         mover.Rotate (-turnSpeed);
+    }
+
+    public override void Shoot()
+    {
+        Debug.Log("Shooted");
+        shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
     }
 
 }
