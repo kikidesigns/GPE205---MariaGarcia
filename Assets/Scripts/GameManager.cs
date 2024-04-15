@@ -55,6 +55,27 @@ public class GameManager : MonoBehaviour
         //hook them up
         newController.pawn = newPawn;
 
+
+
+
+        //claude's idea 
+        //get the tankShooter ocmponent from the instatiated TankPawn
+        TankShooter tankShooter = newPawnObj.GetComponent<TankShooter>();
+        //create a new game object for the firepoint
+        GameObject firePoint = new GameObject("Firepoint");
+        //set the position of firepoint relative to the tankpawn
+        firepoint.transform.position = newPawnObj.transform.position + new Vector3(0,.6f,1.35f);
+        //make the friepoint a child of tankpawn
+        firePoint.transform.parent = newPawnObj.transform;
+        //assign the firepoints transform to the friepoint transform variable
+        tankShooter.firepointTransform = firepointTransform.transform;
+
+
+
+
+
+        
+
     }
         public void Start()
     {
