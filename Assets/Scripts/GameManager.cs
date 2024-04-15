@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
 
         //hook them up
         newController.pawn = newPawn;
+
     }
         public void Start()
     {
