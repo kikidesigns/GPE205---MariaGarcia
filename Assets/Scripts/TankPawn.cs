@@ -12,6 +12,8 @@ public class TankPawn : Pawn
     public float damageDone;
     // variable fro how long bullets survive if they dont collide
     public float shellLifespan;
+    //variable for rate of fire
+    public float fireRate;
     
 
     // Start is called before the first frame update
