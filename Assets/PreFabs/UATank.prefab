@@ -100,6 +100,7 @@ MonoBehaviour:
   fireForce: 1000
   damageDone: 2
   shellLifespan: 1.5
+  shotsPerSecond: 1
 --- !u!54 &143710084202721322
 Rigidbody:
   m_ObjectHideFlags: 0

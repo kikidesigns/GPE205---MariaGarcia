@@ -14,8 +14,10 @@ public class TankPawn : Pawn
     public float shellLifespan;
     //variable for rate of fire
     public float shotsPerSecond;
-    //variable for countdown
+    //variable for countdown current
     private float timeUntilNextShot;
+    //variable for countdown amount
+    private float secondsBetweenShots;
     
 
     // Start is called before the first frame update
@@ -24,8 +26,8 @@ public class TankPawn : Pawn
         base.Start();
 
         //convert shotsPerSecond to time between shots
-        float secondsBetweenShots = 1F /shotsPerSecond;
-        timeUntilNextShot = secondsBetweenShots;
+        secondsBetweenShots = 1F /shotsPerSecond;
+        timeUntilNextShot = Time.time + secondsBetweenShots;
     }
 
     // Update is called once per frame
