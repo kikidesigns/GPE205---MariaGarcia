@@ -13,13 +13,19 @@ public class TankPawn : Pawn
     // variable fro how long bullets survive if they dont collide
     public float shellLifespan;
     //variable for rate of fire
-    public float fireRate;
+    public float shotsPerSecond;
+    //variable for countdown
+    private float timeUntilNextShot;
     
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+
+        //convert shotsPerSecond to time between shots
+        float secondsBetweenShots = 1F /shotsPerSecond;
+        timeUntilNextShot = secondsBetweenShots;
     }
 
     // Update is called once per frame
@@ -54,8 +60,23 @@ public class TankPawn : Pawn
 
     public override void Shoot()
     {
-        Debug.Log("Shooted");
-        shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
+
+        if (Time.time >= timeUntilNextShot)
+        {
+            //shoot
+            Debug.Log("Shooted");
+            shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
+
+            //calculate next time you can shoot
+            timeUntilNextShot = Time.time + secondsBetweenShots;
+        }
+        else
+        {
+            Debug.Log("Not ready yet");
+        }
+
+       
+        
 
         
     }
