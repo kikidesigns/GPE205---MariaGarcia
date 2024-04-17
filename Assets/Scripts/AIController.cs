@@ -143,6 +143,20 @@ public class AIController : Controller
         //rotate to enemy
     }
 
+    //Transition Methods: isDistanceLessThan...
+
+    protected bool isDistanceLessThan(GameObject target, float distance)
+    {
+        if(Vector3.Distance (pawn.transform.position,target.transform.position) < distance )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
 
 }
