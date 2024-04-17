@@ -137,14 +137,14 @@ public class AIController : Controller
         //eat any tank/spice on collision
     }
     
-    //Action Methods: Nothing, Invisible, RotateTowards, MoveForward, Eat, Visible...
+    //Action Methods: Nothing, Invisible, RotateToEnemy, MoveForward, Eat, Visible...
 
     public void Invisible()
     {
         //set visibility to negative
     }
 
-    public abstract void RotateTowards(Vector3 targetPosition)
+    public void RotateToEnemy()
     {
         //rotate to enemy
     }
