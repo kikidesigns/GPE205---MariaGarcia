@@ -9,7 +9,7 @@ public class AIController : Controller
     private float lastStateChangeTime;
 
     //define enum
-    public enum AIState {Idle, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine};
+    public enum AIState { Idle, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine};
 
     //create a variable of this enum type
     public AIState currentState;
@@ -27,6 +27,8 @@ public class AIController : Controller
     {
         //make decisions
         MakeDecisions();
+        //check transitions
+        CheckTransitions();
         //run parent update
         base.Update();
     }
@@ -36,6 +38,8 @@ public class AIController : Controller
         Debug.Log("Processing Inputs?");
     }
 
+
+    //
     public void MakeDecisions()
     {
         Debug.Log("Making Decisions");
@@ -163,5 +167,26 @@ public class AIController : Controller
     }
 
 
+    //Check Transitions
+    protected void CheckTransitions()
+    {
+        switch(currentState)
+        {
+            case AIState.Idle:
+                //check consdition to transition form idle state
+                if (isDistanceLessThan)
+                {
+                    ChangeState(AIState.GuardDesert);
+                }
+                break;
+            case AIState.GuardDesert:
+                //check consdition to transition form guard state
+                if(canHear)
+                {
+                    ChangeState(AIState.WormAttack);
+                }
+                break;
 
+        }
+    }
 }
