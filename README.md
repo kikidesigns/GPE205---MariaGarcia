@@ -29,6 +29,11 @@ The Harkonnen AIController is primarily tasked with mining spice from a stationa
 
 ## Diagrams 
 
+![IMG_4421](https://github.com/kikidesigns/GPE205---MariaGarcia/assets/79329688/ae7d6111-35f0-4b09-9cc9-537efe3f1b10)
+![IMG_4422](https://github.com/kikidesigns/GPE205---MariaGarcia/assets/79329688/9c9c63de-00f8-4e17-910e-1aa766a5b1f3)
+![IMG_4423](https://github.com/kikidesigns/GPE205---MariaGarcia/assets/79329688/c23b3e5e-6d63-4f4d-81e8-11e3adbfdd1f)
+![IMG_4424](https://github.com/kikidesigns/GPE205---MariaGarcia/assets/79329688/2bb96768-38d0-4835-b8c4-8271b7f8c52f)
+![IMG_4425](https://github.com/kikidesigns/GPE205---MariaGarcia/assets/79329688/89bc3ae1-7225-4404-a22a-aa0931f43e83)
 
 
 ## Planned AIControllers
