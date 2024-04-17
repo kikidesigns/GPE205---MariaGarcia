@@ -99,6 +99,7 @@ public class AIController : Controller
         }
     }
 
+   
     public virtual void ChangeState (AIState newState)
     {
         //change the current state
@@ -107,6 +108,9 @@ public class AIController : Controller
         lastStateChangeTime = Time.time;
     }
 
+
+    //States: Idle, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine
+    
     protected void DoIdleState()
     {
         //Do Nothing
@@ -117,16 +121,25 @@ public class AIController : Controller
         //invisible
     }
 
-    public void Invisible()
-    {
-        //set visibility to negative
-    }
-
     protected void DoWormAttackState()
     {
         //rotate in direction of loudest spice mining
         //move forward
         //eat any tank/spice on collision
     }
+    
+    //Action Methods: Nothing, Invisible, RotateToEnemy, MoveForward, Eat, Visible...
+
+    public void Invisible()
+    {
+        //set visibility to negative
+    }
+
+    public void RotateToEnemy()
+    {
+        //rotate to enemy
+    }
+
+
 
 }
