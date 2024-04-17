@@ -46,14 +46,17 @@ public class AIController : Controller
             //Idle
             case AIState.Idle:
             Debug.Log("Idling");
+            DoIdleState;
             break;
             //GuardDesert
             case AIState.GuardDesert:
             Debug.Log("A Sandworm is out there listening");
+            DoGuardDesertState;
             break;
             //WormAttack
             case AIState.WormAttack:
             Debug.Log("A Sandworm is coming");
+            DoWormAttackState;
             break;
             //WormRest
             case AIState.WormRest:
