@@ -27,10 +27,10 @@ public class AIController : Controller
     // Update is called once per frame
     public override void Update()
     {
-        //make decisions
-        MakeDecisions();
-        //check transitions
-        CheckTransitions();
+        // //make decisions
+        // MakeDecisions();
+        // //check transitions
+        // CheckTransitions();
         //run parent update
         base.Update();
     }
@@ -101,9 +101,9 @@ public class AIController : Controller
             Debug.Log("Stealing spice");
             break;
             //Mine
-            case AIState.MineSpice:
-            Debug.Log("Mining spice");
-            break;
+            // case AIState.MineSpice:
+            // Debug.Log("Mining spice");
+            // break;
 
         }
     }
@@ -163,32 +163,32 @@ public class AIController : Controller
         }
     }
 
-    protected bool canHear ()
-    {
+    // protected bool canHear ()
+    // {
 
-    }
+    // }
 
 
     //Check Transitions
-    protected void CheckTransitions()
-    {
-        switch(currentState)
-        {
-            case AIState.Idle:
-                //check consdition to transition form idle state
-                if (isDistanceLessThan)
-                {
-                    ChangeState(AIState.GuardDesert);
-                }
-                break;
-            case AIState.GuardDesert:
-                //check consdition to transition form guard state
-                if(canHear)
-                {
-                    ChangeState(AIState.WormAttack);
-                }
-                break;
+    // protected void CheckTransitions()
+    // {
+    //     switch(currentState)
+    //     {
+    //         case AIState.Idle:
+    //             //check consdition to transition form idle state
+    //             if (isDistanceLessThan)
+    //             {
+    //                 ChangeState(AIState.GuardDesert);
+    //             }
+    //             break;
+    //         case AIState.GuardDesert:
+    //             //check consdition to transition form guard state
+    //             if(canHear)
+    //             {
+    //                 ChangeState(AIState.WormAttack);
+    //             }
+    //             break;
 
-        }
-    }
+    //     }
+    // }
 }

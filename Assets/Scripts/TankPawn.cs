@@ -60,6 +60,14 @@ public class TankPawn : Pawn
         mover.Rotate (-turnSpeed);
     }
 
+    public override void RotateTowards()
+    {
+        Debug.Log("Rotate Towards Target");
+        Vector3 vectorToTarget = targetPosition - transform.Position;
+        Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget,Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+    }
+
     public override void Shoot()
     {
 
