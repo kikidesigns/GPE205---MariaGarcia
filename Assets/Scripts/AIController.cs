@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class AIController : Controller
 {
+    //variable to hold target
+    public GameObject target;
     //variable to hold state changes
     private float lastStateChangeTime;
 
