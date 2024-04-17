@@ -56,7 +56,7 @@ public abstract class Pawn : MonoBehaviour
     public abstract void MoveBackward();
     public abstract void RotateClockwise();
     public abstract void RotateCounterClockwise();
-    public abstract void RotateTowards();
+    public abstract void RotateTowards(Vector3 targetPosition);
     
     //functions to shoot
     public abstract void Shoot();

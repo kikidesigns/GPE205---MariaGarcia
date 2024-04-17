@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
+
     //variable for shell prefab
     public GameObject shellPrefab;
     //variable for firing force
@@ -60,10 +61,10 @@ public class TankPawn : Pawn
         mover.Rotate (-turnSpeed);
     }
 
-    public override void RotateTowards()
+    public override void RotateTowards(Vector3 targetPosition)
     {
         Debug.Log("Rotate Towards Target");
-        Vector3 vectorToTarget = targetPosition - transform.Position;
+        Vector3 vectorToTarget = targetPosition - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget,Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
     }
