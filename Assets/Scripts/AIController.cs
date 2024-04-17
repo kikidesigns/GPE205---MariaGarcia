@@ -13,6 +13,7 @@ public class AIController : Controller
     {      
         //run parent start
         base.Start();
+        ChangeState(AIState.Idle);
     }
 
     // Update is called once per frame
