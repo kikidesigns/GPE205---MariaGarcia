@@ -46,17 +46,17 @@ public class AIController : Controller
             //Idle
             case AIState.Idle:
             Debug.Log("Idling");
-            DoIdleState;
+            DoIdleState();
             break;
             //GuardDesert
             case AIState.GuardDesert:
             Debug.Log("A Sandworm is out there listening");
-            DoGuardDesertState;
+            DoGuardDesertState();
             break;
             //WormAttack
             case AIState.WormAttack:
             Debug.Log("A Sandworm is coming");
-            DoWormAttackState;
+            DoWormAttackState();
             break;
             //WormRest
             case AIState.WormRest:
@@ -155,6 +155,11 @@ public class AIController : Controller
         {
             return false;
         }
+    }
+
+    protected bool canHear ()
+    {
+
     }
 
 
