@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class AIController : Controller
 {
+    //variable to hold state changes
+    private float lastStateChangeTime;
 
     // Start is called before the first frame update
     public override void Start()
@@ -30,5 +32,13 @@ public class AIController : Controller
     public void MakeDecisions()
     {
         Debug.Log("Making Decisions");
+    }
+
+    public virtual void ChangeState (AIState newState)
+    {
+        //change the current state
+        currentState = newState;
+        //save the time we changed states
+        lastStateChangeTime = Time.time;
     }
 }

@@ -17,10 +17,6 @@ public class PlayerController : Controller
         // Run the Start() function from the parent (base) class
         base.Start();
         
-            //get tank pawn component ???????? should i do this ????????
-            //pawn = GetComponent<TankPawn>();
-
-
             //if we have a game manager
         if (GameManager.instance != null)
         {
