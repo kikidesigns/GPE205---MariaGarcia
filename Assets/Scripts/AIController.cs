@@ -21,7 +21,7 @@ public class AIController : Controller
     {      
         //run parent start
         base.Start();
-        ChangeState(AIState.Seek);
+        ChangeState(AIState.GuardDesert);
     }
 
     // Update is called once per frame
@@ -53,16 +53,27 @@ public class AIController : Controller
             case AIState.Seek:
             Debug.Log("Seeking");
             DoSeekState();
+            //check for transition
             break;
             //GuardDesert
             case AIState.GuardDesert:
             Debug.Log("A Sandworm is out there listening");
             DoGuardDesertState();
+            //check for transition
+            if (isDistanceLessThan(target, 5))
+            {
+                ChangeState(AIState.WormAttack);
+            }
             break;
             //WormAttack
             case AIState.WormAttack:
             Debug.Log("A Sandworm is coming");
             DoWormAttackState();
+            //check for transition
+            if(!isDistanceLessThan(target,5))
+            {
+                ChangeState(AIState.GuardDesert);
+            }
             break;
             //WormRest
             case AIState.WormRest:
@@ -128,16 +139,19 @@ public class AIController : Controller
 
     }
 
-    protected void DoGuardDesertState()
+    protected virtual void DoGuardDesertState()
     {
         //invisible
+        Debug.Log("A worm is listening...");
     }
 
-    protected void DoWormAttackState()
+    protected virtual void DoWormAttackState()
     {
         //rotate in direction of loudest spice mining
         //move forward
+        Seek (target);
         //eat any tank/spice on collision
+        Shoot();
     }
     
     //Action Methods: Nothing, Invisible, RotateToEnemy, MoveForward, Eat, Visible...
@@ -152,13 +166,13 @@ public class AIController : Controller
         //rotate to enemy
     }
 
-    // public void Seek (GameObject target)
-    // {
-    //     //rotate towards
-    //     pawn.RotateTowards(target.transform.position);
-    //     //move froward
-    //     pawn.MoveForward();
-    // }
+    public void Seek (GameObject target)
+    {
+        //rotate towards
+        pawn.RotateTowards(target.transform.position);
+        //move froward
+        pawn.MoveForward();
+    }
     //overloading "seek"
     public void Seek (Vector3 targetPosition)
     {
@@ -184,7 +198,11 @@ public class AIController : Controller
         Seek(targetController.pawn);
     }
 
-
+    public void Shoot()
+    {
+        //tell pawn to shoot
+        pawn.Shoot();
+    }
 
     //Transition Methods: isDistanceLessThan...
 
