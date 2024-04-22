@@ -11,7 +11,7 @@ public class AIController : Controller
     private float lastStateChangeTime;
 
     //define enum
-    public enum AIState { Idle, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine};
+    public enum AIState { Seek, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine};
 
     //create a variable of this enum type
     public AIState currentState;
@@ -21,15 +21,15 @@ public class AIController : Controller
     {      
         //run parent start
         base.Start();
-        ChangeState(AIState.Idle);
+        ChangeState(AIState.Seek);
     }
 
     // Update is called once per frame
     public override void Update()
     {
-        // //make decisions
-        // MakeDecisions();
-        // //check transitions
+        //make decisions
+        MakeDecisions();
+        //check transitions
         // CheckTransitions();
         //run parent update
         base.Update();
@@ -49,10 +49,10 @@ public class AIController : Controller
         // switch/case decision structure
         switch (currentState) 
         {
-            //Idle
-            case AIState.Idle:
-            Debug.Log("Idling");
-            DoIdleState();
+            //Seek
+            case AIState.Seek:
+            Debug.Log("Seeking");
+            DoSeekState();
             break;
             //GuardDesert
             case AIState.GuardDesert:
@@ -120,9 +120,12 @@ public class AIController : Controller
 
     //States: Idle, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine
     
-    protected void DoIdleState()
+    protected void DoSeekState()
     {
-        //Do Nothing
+        //Seek Test
+        Seek(target);
+
+
     }
 
     protected void DoGuardDesertState()
@@ -148,6 +151,40 @@ public class AIController : Controller
     {
         //rotate to enemy
     }
+
+    // public void Seek (GameObject target)
+    // {
+    //     //rotate towards
+    //     pawn.RotateTowards(target.transform.position);
+    //     //move froward
+    //     pawn.MoveForward();
+    // }
+    //overloading "seek"
+    public void Seek (Vector3 targetPosition)
+    {
+        //rotate towards
+        pawn.RotateTowards(targetPosition);
+        //move froward
+        pawn.MoveForward();
+    }
+    public void Seek(Transform targetTransform)
+    {
+        //seek position of target transform
+        Seek (targetTransform.position);
+    }
+    public void Seek(Pawn targetPawn)
+    {
+        //seeek pawn's transform
+        Seek(targetPawn.transform);
+    }
+
+    public void Seek(Controller targetController)
+    {
+        //seek controllers pawn
+        Seek(targetController.pawn);
+    }
+
+
 
     //Transition Methods: isDistanceLessThan...
 

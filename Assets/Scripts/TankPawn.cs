@@ -64,8 +64,11 @@ public class TankPawn : Pawn
     public override void RotateTowards(Vector3 targetPosition)
     {
         Debug.Log("Rotate Towards Target");
+        //find the vector to our target
         Vector3 vectorToTarget = targetPosition - transform.position;
+        //find the rotation to look down tht vector
         Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget,Vector3.up);
+        //rotate towards vector as fast as turn speed allows in one frame
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
     }
 
