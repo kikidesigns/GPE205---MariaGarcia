@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class AIController : Controller
 {
+    //variable to normalize fleedistance
+    public float runAwayDistance;
     //variable to hold target
     public GameObject target;
     //variable to hold state changes
@@ -135,8 +137,6 @@ public class AIController : Controller
     {
         //Seek Test
         Seek(target);
-
-
     }
 
     protected virtual void DoGuardDesertState()
@@ -154,6 +154,13 @@ public class AIController : Controller
         Shoot();
     }
     
+    protected virtual void DoFleeState()
+    {
+        //run away
+        RunAway();
+    }
+
+
     //Action Methods: Nothing, Invisible, RotateToEnemy, MoveForward, Eat, Visible...
 
     public void Invisible()
@@ -203,6 +210,19 @@ public class AIController : Controller
         //tell pawn to shoot
         pawn.Shoot();
     }
+
+    public void RunAway()
+    {
+        //find vector that points to our target
+        Vector3 vectorToTarget = target.transform.position - pawn.transform.position;
+        //reverse the direction
+        Vector3 vectorAwayFromTarget = -vectorToTarget;
+        //normalize it
+        Vector3 runAwayVector = vectorAwayFromTarget.normalized * runAwayDistance;
+        //seek the point that is "runawayvector" away from our current position
+        Seek(pawn.transform.position + runAwayVector);
+    }
+
 
     //Transition Methods: isDistanceLessThan...
 
