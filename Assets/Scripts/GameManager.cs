@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
 
     public void SpawnPlayer()
     {
+        //add new pawn to pawns list
+        pawns.Add(newPawn);
+        
         //spawn player at 000 no rotation
         
         GameObject newPlayerObj = Instantiate(playerControllerPrefab, Vector3.zero, Quaternion.identity) as GameObject;
