@@ -408,6 +408,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 95460744006824395, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95460744006824395, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
+      propertyPath: turnSpeed
+      value: 160
+      objectReference: {fileID: 0}
     - target: {fileID: 4642034177785899337, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
       propertyPath: firepointTransform
       value: 
@@ -615,6 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 1221605392}
+  runAwayDistance: 0
   target: {fileID: 0}
   currentState: 0
 --- !u!4 &1615164380

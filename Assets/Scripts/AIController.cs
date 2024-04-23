@@ -23,7 +23,7 @@ public class AIController : Controller
     {      
         //run parent start
         base.Start();
-        ChangeState(AIState.GuardDesert);
+        ChangeState(AIState.Flee);
     }
 
     // Update is called once per frame
@@ -104,6 +104,7 @@ public class AIController : Controller
             //Flee
             case AIState.Flee:
             Debug.Log("Fly away from Sandworm");
+            DoFleeState();
             break;
             //BackToPost
             case AIState.BackToPost:
@@ -217,10 +218,27 @@ public class AIController : Controller
         Vector3 vectorToTarget = target.transform.position - pawn.transform.position;
         //reverse the direction
         Vector3 vectorAwayFromTarget = -vectorToTarget;
-        //normalize it
-        Vector3 runAwayVector = vectorAwayFromTarget.normalized * runAwayDistance;
+
+        //find distance the target is from player
+        float targetDistance = Vector3.Distance (target.transform.position, pawn.transform.position);
+        //find percent of runAwayDistance
+        float percentOfRunAwayDistance = targetDistance / runAwayDistance;
+        //clmap between 0 and 1
+        percentOfRunAwayDistance = Mathf.Clamp01(percentOfRunAwayDistance);
+        //invert
+        float flippedPercentOfRunAwayDistance = 1-percentOfRunAwayDistance;
+
+        //clculate flee magnitude based on inverted percentage
+        float runAwayVectorMagnitude= flippedPercentOfRunAwayDistance * runAwayDistance;
+        //ai flees at least 1 unit away
+        runAwayVectorMagnitude = Mathf.Max(runAwayVectorMagnitude,1f);
+
+        //final flee vector
+        Vector3 runAwayVector = vectorAwayFromTarget.normalized * runAwayVectorMagnitude;
         //seek the point that is "runawayvector" away from our current position
         Seek(pawn.transform.position + runAwayVector);
+
+        
     }
 
 
