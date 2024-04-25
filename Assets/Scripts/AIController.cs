@@ -42,8 +42,32 @@ public class AIController : Controller
         Debug.Log("Processing Inputs?");
     }
 
+    //finds the first players pawn as target
+    public void TargetPlayerOne()
+    {
+        //if game manager exists
+        if (GameManager.instance != null)
+        {
+            //and the array of players exists
+            if(GameManager.instance.players != null)
+            {
+                //and there are players in it
+                if(GameManager.instance.players.Count > 0 )
+                {
+                    //then target the gameobject of the pawn of the first player controller on the list
+                    target = GameManager.instance.players[0].pawn.gameObject;
+                }
+            }
+        }
+    }
+    
+    protected bool isHasTarget()
+    {
+        //return true if we have a target
+        return(target != null);
+    }
 
-    //
+
     public void MakeDecisions()
     {
         Debug.Log("Making Decisions");
