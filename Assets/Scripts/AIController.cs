@@ -13,7 +13,7 @@ public class AIController : Controller
     private float lastStateChangeTime;
 
     //define enum
-    public enum AIState { Seek, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine};
+    public enum AIState { ChooseTarget, Seek, GuardDesert, WormAttack, WormRest, GuardSpice, Defend, Scan, Chase, Attack, Flee, BackToPost, Steal, Mine};
 
     //create a variable of this enum type
     public AIState currentState;
@@ -68,7 +68,7 @@ public class AIController : Controller
     }
 
 
-    public void MakeDecisions()
+    public virtual void MakeDecisions()
     {
         Debug.Log("Making Decisions");
 
@@ -138,6 +138,10 @@ public class AIController : Controller
             case AIState.Steal:
             Debug.Log("Stealing spice");
             break;
+            //choose target
+            case AIState.ChooseTarget:
+            Debug.Log("Choosing target");
+            break;
             //Mine
             // case AIState.MineSpice:
             // Debug.Log("Mining spice");
@@ -162,6 +166,11 @@ public class AIController : Controller
     {
         //Seek Test
         Seek(target);
+    }
+
+    protected virtual void DoWormRestState()
+    {
+        Debug.Log("the worm has left... for now...");
     }
 
     protected virtual void DoGuardDesertState()
