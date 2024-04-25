@@ -21,8 +21,18 @@ public class AIController : Controller
     // Start is called before the first frame update
     public override void Start()
     {      
+         if (GameManager.instance != null)
+        {
+            //and tracks players
+            if (GameManager.instance.controllers != null)
+            {
+                //register with gamemanager
+                GameManager.instance.controllers.Add(this);
+            }
+        }
         //run parent start
         base.Start();
+
         ChangeState(AIState.Seek);
     }
 
@@ -300,10 +310,34 @@ public class AIController : Controller
         }
     }
 
-    // protected bool canHear ()
-    // {
-
-    // }
+    public bool canHear ()
+    {
+       //get the targets noisemaker
+       NoiseMaker noiseMaker = target.GetComponent<NoiseMaker>();
+       
+       //if they dont have one they cant make noise return false
+       if (noiseMaker ==null)
+       {
+        return false;
+       }
+       //if they are making  noise they cant be heard
+       if (noiseMaker.volumeDistance <=0)
+       {
+        return false;
+       }
+       //if they are making noise add the volumedistance to thehearing distance
+       float totalDistance = noiseMaker.volumeDistance + hearingDistance;
+       //if the distance between pawn and target is colser than this
+       if (Vector3.Distance(pawn.transform.position,target.transform.position)<=totalDistance)
+       {
+        //then we can hear the target
+        return true;
+       }
+       else{
+        //otherwise were too far
+        return false;
+       }
+    }
 
 
     //Check Transitions

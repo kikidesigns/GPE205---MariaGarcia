@@ -190,10 +190,10 @@ public class HarkonnenAIController : AIController
         return false; // Placeholder
     }
 
-        public bool canHear()
-    {
-        //logic to see if hsia hulud can hear a loud spice mine
-        return false; //placeholder
-    }
+    //     public bool canHear()
+    // {
+    //     //logic to see if hsia hulud can hear a loud spice mine
+    //     return false; //placeholder
+    // }
 
 }

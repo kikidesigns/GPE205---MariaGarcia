@@ -13,6 +13,8 @@ public abstract class Pawn : MonoBehaviour
     public Mover mover;
     //variable to hold our shooter
     public Shooter shooter;
+    //variable to set pawns noisemaker
+    public float pawnVolume;
     
 
     // Start is called before the first frame update
@@ -21,6 +23,13 @@ public abstract class Pawn : MonoBehaviour
         
         mover = GetComponent<Mover>();
         shooter = GetComponent<Shooter>();
+        //get a reference to the noisemkaer coponent
+        NoiseMaker noiseMaker = GetComponent<NoiseMaker>();
+        //if it exists set to pawnVolume
+        if (noiseMaker != null)
+        {
+            noiseMaker.volumeDistance = pawnVolume;
+        }
 
      //if we have a game manager
         if (GameManager.instance != null)

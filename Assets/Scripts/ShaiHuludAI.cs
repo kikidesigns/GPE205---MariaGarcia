@@ -102,9 +102,9 @@ public class ShaiHuludAI : AIController
     //transition methods
 
 
-    public bool canHear()
-    {
-        //logic to see if hsia hulud can hear a loud spice mine
-        return false; //placeholder
-    }
+    // public bool canHear()
+    // {
+    //     //logic to see if hsia hulud can hear a loud spice mine
+    //     return false; //placeholder
+    // }
 }
