@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ShaiHuludAI : AIController
 {
+
+
     private float restTimer = 0f;
 
     public float restTime = 13f;
 
-    private bool hasInteractedWithSandRim = false;
+    public bool hasInteractedWithSandRim = false;
 
     // Start is called before the first frame update
     public override void Start()
@@ -47,14 +49,21 @@ public class ShaiHuludAI : AIController
             DoGuardDesertState();
 
             //add has target transition
+            if (canHear())
+            {
+                ChangeState(AIState.WormAttack);
+            }
 
             break;
 
             //worm attack
             case AIState.WormAttack:
             DoWormAttackState();
-
-            //add hastouchedsandrim transition
+            if (hasInteractedWithSandRim)
+            {
+                ChangeState(AIState.WormRest);
+            }
+           
 
             break;
 
@@ -91,15 +100,11 @@ public class ShaiHuludAI : AIController
 
 
     //transition methods
-    public bool hasInteractedWithSandRim()
-    {
-        //logic to see if shai hulud has interacted with sand rim
-        //return true if interacted
-        return false; //placeholder
-    }
+
 
     public bool canHear()
     {
         //logic to see if hsia hulud can hear a loud spice mine
+        return false; //placeholder
     }
 }

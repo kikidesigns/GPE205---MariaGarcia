@@ -420,6 +420,14 @@ PrefabInstance:
       propertyPath: firepointTransform
       value: 
       objectReference: {fileID: 2019521306}
+    - target: {fileID: 5688530724998705329, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5688530724998705329, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: -4872552678638238010, guid: 97707ba1ec1d35645aca506767347908, type: 3}
     - target: {fileID: 6192806820656894308, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
       propertyPath: m_Name
       value: AITank
@@ -430,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825931267447360478, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47246948
+      value: -0.47246957
       objectReference: {fileID: 0}
     - target: {fileID: 6825931267447360478, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -442,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825931267447360478, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6825931267447360478, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
       propertyPath: m_LocalRotation.y
@@ -805,5 +813,5 @@ SceneRoots:
   - {fileID: 69287024}
   - {fileID: 1681729796}
   - {fileID: 179926072}
-  - {fileID: 1615164380}
   - {fileID: 239881100}
+  - {fileID: 1615164380}

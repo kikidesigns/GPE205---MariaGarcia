@@ -23,7 +23,7 @@ public class AIController : Controller
     {      
         //run parent start
         base.Start();
-        ChangeState(AIState.Flee);
+        ChangeState(AIState.Seek);
     }
 
     // Update is called once per frame
@@ -194,6 +194,12 @@ public class AIController : Controller
         RunAway();
     }
 
+    protected virtual void DoScanState()
+    {
+        //rotate clockwise
+        rotateClockwise();
+    }
+
 
     //Action Methods: Nothing, Invisible, RotateToEnemy, MoveForward, Eat, Visible...
 
@@ -243,6 +249,11 @@ public class AIController : Controller
     {
         //tell pawn to shoot
         pawn.Shoot();
+    }
+
+    public void rotateClockwise()
+    {
+        Debug.Log("rotating clockwise");
     }
 
     public void RunAway()
