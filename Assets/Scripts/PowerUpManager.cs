@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PowerUpManager : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    //the add function will eventually add a powerup
+    public void Add(PowerUp powerUpToAdd)
+    {
+        //TODO create the add method
+    }
+
+    //the remove function will eventually remove a powerup
+    public void Remove(PowerUp powerUpToRemove)
+    {
+        //TODO create the remove method
+    }
+
+}
