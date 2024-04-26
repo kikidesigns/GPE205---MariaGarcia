@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+
 public class HealthPickUp : MonoBehaviour
 {
     //variable to hold data for the powerup that our tabks will get
