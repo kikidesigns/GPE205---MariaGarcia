@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public abstract class Pawn : MonoBehaviour
 {
+    //variable to set pawns noisemaker
+    public float pawnVolume;
     // Variable for move speed
     public float moveSpeed;
     // Variable for turn speed
@@ -13,8 +15,7 @@ public abstract class Pawn : MonoBehaviour
     public Mover mover;
     //variable to hold our shooter
     public Shooter shooter;
-    //variable to set pawns noisemaker
-    public float pawnVolume;
+
     
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public abstract class Pawn : MonoBehaviour
         
         mover = GetComponent<Mover>();
         shooter = GetComponent<Shooter>();
+
         //get a reference to the noisemkaer coponent
         NoiseMaker noiseMaker = GetComponent<NoiseMaker>();
         //if it exists set to pawnVolume
@@ -30,6 +32,7 @@ public abstract class Pawn : MonoBehaviour
         {
             noiseMaker.volumeDistance = pawnVolume;
         }
+
 
      //if we have a game manager
         if (GameManager.instance != null)

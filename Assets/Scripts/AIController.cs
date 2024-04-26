@@ -33,7 +33,7 @@ public class AIController : Controller
         //run parent start
         base.Start();
 
-        ChangeState(AIState.Seek);
+        ChangeState(AIState.Flee);
     }
 
     // Update is called once per frame
@@ -312,28 +312,28 @@ public class AIController : Controller
 
     public bool canHear ()
     {
-       //get the targets noisemaker
-       NoiseMaker noiseMaker = target.GetComponent<NoiseMaker>();
+    //    //get the targets noisemaker
+    //    NoiseMaker noiseMaker = target.GetComponent<NoiseMaker>();
        
-       //if they dont have one they cant make noise return false
-       if (noiseMaker ==null)
-       {
-        return false;
-       }
-       //if they are making  noise they cant be heard
-       if (noiseMaker.volumeDistance <=0)
-       {
-        return false;
-       }
-       //if they are making noise add the volumedistance to thehearing distance
-       float totalDistance = noiseMaker.volumeDistance + hearingDistance;
-       //if the distance between pawn and target is colser than this
-       if (Vector3.Distance(pawn.transform.position,target.transform.position)<=totalDistance)
-       {
-        //then we can hear the target
-        return true;
-       }
-       else{
+    //    //if they dont have one they cant make noise return false
+    //    if (noiseMaker ==null)
+    //    {
+    //     return false;
+    //    }
+    //    //if they are making  noise they cant be heard
+    //    if (noiseMaker.volumeDistance <=0)
+    //    {
+    //     return false;
+    //    }
+    //    //if they are making noise add the volumedistance to thehearing distance
+    //    float totalDistance = noiseMaker.volumeDistance + hearingDistance;
+    //    //if the distance between pawn and target is colser than this
+    //    if (Vector3.Distance(pawn.transform.position,target.transform.position)<=totalDistance)
+    //    {
+    //     //then we can hear the target
+    //     return true;
+    //    }
+    //    else{
         //otherwise were too far
         return false;
        }
@@ -362,4 +362,4 @@ public class AIController : Controller
 
     //     }
     // }
-}
+// }
