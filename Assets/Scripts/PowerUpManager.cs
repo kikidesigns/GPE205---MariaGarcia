@@ -20,6 +20,7 @@ public class PowerUpManager : MonoBehaviour
     public void Add(PowerUp powerUpToAdd)
     {
         //TODO create the add method
+        powerUpToAdd.Apply(this);
     }
 
     //the remove function will eventually remove a powerup

@@ -13,6 +13,12 @@ public class HealthPowerUp : PowerUp
     public override void Apply (PowerUpManager target)
     {
         //TODO apply health changes
+        Health targetHealth = target.GetComponent<Health>();
+        if(targetHealth != null)
+        {
+            //the second parameterr is ht eoawn who caused the healing, in this case it is themselves
+            targetHealth.Heal(healthToAdd, target.GetComponent<pawn>());
+        }
     }
 
     //function
