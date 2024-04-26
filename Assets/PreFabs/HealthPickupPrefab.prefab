@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6748487141577427239}
   - component: {fileID: 4744108137521843533}
   - component: {fileID: 6903092646634804831}
+  - component: {fileID: -8558568142709843895}
   m_Layer: 0
   m_Name: HealthPickupPrefab
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4161865121834403631}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.3071492, y: -0.9115745, z: 0.08726608, w: -0.25899056}
   m_LocalPosition: {x: -9.952837, y: 1.19, z: 5.008377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -122,3 +123,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUp:
     healthToAdd: 1
+--- !u!114 &-8558568142709843895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161865121834403631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141ffb6f09afaf84a95b0d491980b563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
+  hoverAmplitude: 0.5
+  hoverFrequency: 1
