@@ -33,7 +33,7 @@ public class PickupSpawnerComponent : MonoBehaviour
             if (Time.time > nextSpawnTime)
             {
                 //spawn and set next tiem
-                Instantiate (pickUpPrefab, Transform.position, Quaternion.identity);
+                spawnedPickup = Instantiate (pickUpPrefab, transform.position, Quaternion.identity);
                 nextSpawnTime = Time.time + spawnDelay;
             }
         }

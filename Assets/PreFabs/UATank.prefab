@@ -74,6 +74,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97707ba1ec1d35645aca506767347908, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4500537045482365648}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97707ba1ec1d35645aca506767347908, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4379797687651367065}
   m_SourcePrefab: {fileID: 100100000, guid: 97707ba1ec1d35645aca506767347908, type: 3}
 --- !u!1 &6192806820656894308 stripped
 GameObject:
@@ -92,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b39c0e6daae4e44bbaba07f8632d5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pawnVolume: 0
   moveSpeed: 5
   turnSpeed: 40
   mover: {fileID: 6433162636542676599}
@@ -188,3 +192,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 10
   maxHealth: 10
+--- !u!114 &-4379797687651367065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192806820656894308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40d2391fb4a3274b809a531e62e14d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
