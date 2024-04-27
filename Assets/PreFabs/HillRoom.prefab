@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 3157612765844848761}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.95484245, z: -0, w: 0.29711258}
-  m_LocalPosition: {x: 5.9065957, y: 0.4, z: -5.332506}
-  m_LocalScale: {x: 18.681091, y: 2.7341, z: 8.625475}
+  m_LocalPosition: {x: 2.6806, y: 0.4, z: 9.1318}
+  m_LocalScale: {x: 13.435441, y: 2.7341, z: 4.453333}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7372997198859599912}
@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 3193001576329517938}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6273856, z: -0, w: 0.7787088}
-  m_LocalPosition: {x: -16.073406, y: 0.4, z: 1.5374932}
-  m_LocalScale: {x: 18.681091, y: 2.7341, z: 8.625475}
+  m_LocalPosition: {x: -11.0396, y: 0.4, z: 11.0438}
+  m_LocalScale: {x: 9.645048, y: 2.7341, z: 6.2034416}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7372997198859599912}
@@ -193,8 +193,8 @@ Transform:
   m_GameObject: {fileID: 7968760151993483205}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.903404, y: 0.4, z: -16.722507}
-  m_LocalScale: {x: 18.681091, y: 2.7341, z: 8.625475}
+  m_LocalPosition: {x: -8.7363, y: 0.4, z: 1.0089}
+  m_LocalScale: {x: 13.435441, y: 2.7341, z: 4.453333}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7372997198859599912}
@@ -276,8 +276,8 @@ Transform:
   m_GameObject: {fileID: 8006863402583111426}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.436596, y: 0, z: 13.257494}
-  m_LocalScale: {x: 10.230048, y: 2.7341, z: 7.3930526}
+  m_LocalPosition: {x: 6.7509, y: -0, z: 20.2782}
+  m_LocalScale: {x: 7.357451, y: 2.7341, z: 3.8170333}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7372997198859599912}
@@ -359,8 +359,8 @@ Transform:
   m_GameObject: {fileID: 8691195847850563437}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.426594, y: 0, z: -19.792507}
-  m_LocalScale: {x: 10.230048, y: 2.7341, z: 7.3930526}
+  m_LocalPosition: {x: 10.1499, y: -0, z: 2.0036}
+  m_LocalScale: {x: 7.357451, y: 2.7341, z: 3.8170333}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7372997198859599912}
@@ -425,7 +425,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121816, guid: 41d4243be8ad3a5409422171976de7ff, type: 3}
       propertyPath: m_Name
-      value: Room Variant
+      value: HillRoom
       objectReference: {fileID: 0}
     - target: {fileID: 421816, guid: 41d4243be8ad3a5409422171976de7ff, type: 3}
       propertyPath: m_LocalPosition.x

@@ -56,7 +56,11 @@ public class GameManager : MonoBehaviour
         //hook them up
         newController.pawn = newPawn;
 
+        // Get the CameraFollow component from the main camera
+        CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
 
+        // Assign the player's tankpawn transform to the CameraFollow target
+        cameraFollow.target = newPawnObj.transform;
 
 
         //claude's idea 
