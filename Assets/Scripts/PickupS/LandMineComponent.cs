@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class HealthPickUp : MonoBehaviour
+public class LandMineComponent : MonoBehaviour
 {
     //variable to hold data for the powerup that our tabks will get
-    public HealthPowerUp powerUp;
+    public LandMinePowerUp powerUp;
 
     //on collision
     public void OnTriggerEnter(Collider other)
     {
         //variable to store objects powerrup controller
         PowerUpManager powerUpManager = other.GetComponent<PowerUpManager>();
+        Debug.Log("touchedLandMine");
 
         //if it has one
         if(powerUpManager != null) 
@@ -24,4 +24,5 @@ public class HealthPickUp : MonoBehaviour
            Destroy(gameObject);
         }
     }
+
 }

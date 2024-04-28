@@ -39,25 +39,21 @@ public class TankPawn : Pawn
 
     public override void MoveForward()
     {
-        Debug.Log("Move Forward");
         mover.Move(transform.forward, moveSpeed);
     }
 
     public override void MoveBackward()
     {
-        Debug.Log("Move Backward");
         mover.Move(transform.forward, -moveSpeed);
     }
 
     public override void RotateClockwise()
     {
-        Debug.Log("Rotate Clockwise");
         mover.Rotate(turnSpeed);
     }
 
     public override void RotateCounterClockwise()
     {
-        Debug.Log("Rotate Counter-Clockwise");
         mover.Rotate (-turnSpeed);
     }
 
