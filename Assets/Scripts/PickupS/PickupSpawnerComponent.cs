@@ -14,7 +14,7 @@ public class PickupSpawnerComponent : MonoBehaviour
     private Transform tf;
     //store pickup gameobject we are instantiating
     private GameObject spawnedPickup;
-
+    
 
 
     // Start is called before the first frame update

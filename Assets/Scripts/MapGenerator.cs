@@ -100,6 +100,13 @@ public class MapGenerator : MonoBehaviour
                 }
                 //save it to grid array
                 grid[currentCol,currentRow] = tempRoom;
+
+                //find all pawnspawnpoint child objects and add it to game manaegers list
+                PawnSpawnPoint[] spawnPoints = tempRoomObj.GetComponentsInChildren<PawnSpawnPoint>();
+                foreach (PawnSpawnPoint spawnPoint in spawnPoints)
+                {
+                    GameManager.instance.pawnSpawnPoints.Add(spawnPoint);
+                }
             }
         }
 

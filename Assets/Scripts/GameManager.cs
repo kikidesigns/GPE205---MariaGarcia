@@ -13,10 +13,12 @@ public class GameManager : MonoBehaviour
     public GameObject playerControllerPrefab;
     public GameObject tankPawnPrefab;
     
-    //list that holds players
+    //list that holds players, controllers pawns
     public List<PlayerController> players;
     public List<Controller> controllers;
     public List<Pawn> pawns;
+    //list to store pawnspawn point
+    public List<PawnSpawnPoint> pawnSpawnPoints;
 
 
     // awake is called before start can run
@@ -83,6 +85,23 @@ public class GameManager : MonoBehaviour
         SpawnPlayer();
 
 
+    }
+
+
+    public void SpawnPawn(GameObject pawnPrefab)
+    {
+        if (pawnSpawnPoints.Count > 0)
+        {
+            int randomIndex = Random.Range(0, pawnSpawnPoints.Count);
+            PawnSpawnPoint randomSpawnPoint = pawnSpawnPoints[randomIndex];
+
+            GameObject newPawn = Instantiate(pawnPrefab, randomSpawnPoint.transform.position, randomSpawnPoint.transform.rotation);
+            // Additional setup for the spawned pawn, if needed
+        }
+        else
+        {
+            Debug.LogWarning("No spawn points found for pawns.");
+        }
     }
 
 
