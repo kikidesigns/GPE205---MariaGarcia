@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4161865121834403631
+--- !u!1 &8893175498892646368
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1910195985323689880}
-  - component: {fileID: 8231980467648561545}
-  - component: {fileID: 6748487141577427239}
-  - component: {fileID: 4744108137521843533}
-  - component: {fileID: 6903092646634804831}
-  - component: {fileID: -8558568142709843895}
+  - component: {fileID: 4727297660525119355}
+  - component: {fileID: 2872114585382995187}
+  - component: {fileID: 1988192955417046947}
+  - component: {fileID: 9031045440187018239}
+  - component: {fileID: 1486943518969783872}
   m_Layer: 0
-  m_Name: HealthPickupPrefab
+  m_Name: LandMineObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1910195985323689880
+--- !u!4 &4727297660525119355
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4161865121834403631}
+  m_GameObject: {fileID: 8893175498892646368}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3071492, y: -0.9115745, z: 0.08726608, w: -0.25899056}
-  m_LocalPosition: {x: -9.952837, y: 1.19, z: 5.008377}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.63, y: -0.022469431, z: -7.67}
+  m_LocalScale: {x: 1, y: 0.15162459, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8231980467648561545
+--- !u!33 &2872114585382995187
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4161865121834403631}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6748487141577427239
+  m_GameObject: {fileID: 8893175498892646368}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1988192955417046947
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4161865121834403631}
+  m_GameObject: {fileID: 8893175498892646368}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3228131962952574658, guid: 97707ba1ec1d35645aca506767347908, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4744108137521843533
-CapsuleCollider:
+--- !u!135 &9031045440187018239
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4161865121834403631}
+  m_GameObject: {fileID: 8893175498892646368}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -104,39 +103,22 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6903092646634804831
+--- !u!114 &1486943518969783872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4161865121834403631}
+  m_GameObject: {fileID: 8893175498892646368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf5a8bf17ed0884daeaf51c3541739d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eff5277d7801fb4195a3cc8a8278ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   powerUp:
     duration: 0
     isPermanent: 1
-    healthToAdd: 1
---- !u!114 &-8558568142709843895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4161865121834403631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141ffb6f09afaf84a95b0d491980b563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  hoverAmplitude: 0.5
-  hoverFrequency: 1
+    damageToTake: 11
