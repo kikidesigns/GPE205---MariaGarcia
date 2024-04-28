@@ -906,7 +906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1664289298971058651, guid: 5217c3d01966e08469333a6f301c3028, type: 3}
       propertyPath: m_Name
-      value: Room Variant
+      value: SpiceSiloRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152575663492911767, guid: 5217c3d01966e08469333a6f301c3028, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

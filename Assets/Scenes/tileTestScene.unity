@@ -251,8 +251,8 @@ MonoBehaviour:
   - {fileID: 2088046085178585357, guid: 660ef8c7e44cc6047a8f2675e567c23d, type: 3}
   rows: 3
   cols: 3
-  roomWidth: 20
-  roomHeight: 80
+  roomWidth: 50
+  roomHeight: 50
 --- !u!4 &1696372812
 Transform:
   m_ObjectHideFlags: 0

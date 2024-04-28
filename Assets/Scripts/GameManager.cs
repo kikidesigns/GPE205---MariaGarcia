@@ -76,11 +76,6 @@ public class GameManager : MonoBehaviour
         tankShooter.firepointTransform = firePoint.transform;
 
 
-
-
-
-
-
     }
         public void Start()
     {
