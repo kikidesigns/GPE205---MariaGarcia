@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
         SpawnPlayer();
 
-        SpawnAIUnits(6);
+        SpawnAIUnits(1);
     }
 
 

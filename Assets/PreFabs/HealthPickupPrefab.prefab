@@ -124,7 +124,7 @@ MonoBehaviour:
   powerUp:
     duration: 0
     isPermanent: 1
-    healthToAdd: 1
+    healthToAdd: 11
 --- !u!114 &-8558568142709843895
 MonoBehaviour:
   m_ObjectHideFlags: 0

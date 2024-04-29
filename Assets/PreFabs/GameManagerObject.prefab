@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7717996073541716841}
   - component: {fileID: 1324330477429131855}
+  - component: {fileID: 2753513720392089781}
   m_Layer: 0
   m_Name: GameManagerObject
   m_TagString: Untagged
@@ -47,8 +48,32 @@ MonoBehaviour:
   playerSpawnTransform: {fileID: 0}
   playerControllerPrefab: {fileID: 5813608398891300116, guid: d0d0f4005cb093e4fab3bdf9ba1d20ac, type: 3}
   tankPawnPrefab: {fileID: 6192806820656894308, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
-  aiControllerPrefab: {fileID: 0}
+  aiControllerPrefab: {fileID: 7318864590423645957, guid: 6b4b994e9ba913e4d8595b50f63a0f22, type: 3}
   players: []
   controllers: []
   pawns: []
   pawnSpawnPoints: []
+--- !u!114 &2753513720392089781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132494401335547416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac025295fd51a340a0a6af0307eef33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridPrefabs:
+  - {fileID: 7372997198859842632, guid: 75dbe2c3af0e4d24e9b2dfa0bac66b30, type: 3}
+  - {fileID: 1664289298971058651, guid: 5217c3d01966e08469333a6f301c3028, type: 3}
+  - {fileID: 2088046085178585357, guid: 660ef8c7e44cc6047a8f2675e567c23d, type: 3}
+  rows: 2
+  cols: 2
+  roomWidth: 50
+  roomHeight: 50
+  mapSeed: 0
+  presetSeed: 0
+  isMapOfTheDay: 0
+  isRandomMap: 1
