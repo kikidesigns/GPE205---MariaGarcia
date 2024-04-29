@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawnVolume: 0
   moveSpeed: 5
-  turnSpeed: 40
+  turnSpeed: 333
   mover: {fileID: 6433162636542676599}
   shooter: {fileID: 0}
   shellPrefab: {fileID: 1143226136598082839, guid: be64f6e00083afc4bb29c3233fb0e860, type: 3}

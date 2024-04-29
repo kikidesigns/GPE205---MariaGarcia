@@ -157,6 +157,22 @@ public class GameManager : MonoBehaviour
             //set the target for AIcontroller to be playerpawn
             aiController.target = playerPawn.gameObject;
 
+            //testFirepointstuff
+            // Set the target for the AI controller to the player's pawn
+            aiController.target = playerPawn.gameObject;
+
+            // Create a new game object for the firepoint
+            GameObject firePoint = new GameObject("FirePoint");
+            // Set the position of firepoint relative to the AI pawn
+            firePoint.transform.position = aiPawnObj.transform.position + new Vector3(0, .6f, 1.35f);
+            // Make the firepoint a child of the AI pawn
+            firePoint.transform.parent = aiPawnObj.transform;
+            // Assign the firepoint's transform to the firepoint transform variable
+            TankShooter tankShooter = aiPawnObj.GetComponent<TankShooter>();
+            tankShooter.firepointTransform = firePoint.transform;
+
+
+
             //Pass any additional data from the soawn opint  to the ai controlelr
             aiController.SetupFromSpawnPoint(spawnPoint);
         }
