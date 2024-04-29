@@ -9,6 +9,8 @@ public abstract class PowerUp
     //variable for permanence
     public bool isPermanent;
 
+    protected PowerUpManager targetPowerUpManager;
+
     public abstract void Apply(PowerUpManager target);
     public abstract void Remove(PowerUpManager target);
 }

@@ -19,13 +19,16 @@ public class TankPawn : Pawn
     private float timeUntilNextShot;
     //variable for countdown amount
     private float secondsBetweenShots;
+    //original movepseed
+    private float originalMoveSpeed;
     
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-
+        //store original movespeed
+        originalMoveSpeed = moveSpeed; // Store the original move speed
         //convert shotsPerSecond to time between shots
         secondsBetweenShots = 1F /shotsPerSecond;
         timeUntilNextShot = Time.time + secondsBetweenShots;
@@ -91,4 +94,16 @@ public class TankPawn : Pawn
         
     }
 
+    public void BoostSpeed(float boostAmount, Pawn source)
+    {
+        //boost speed
+        moveSpeed = moveSpeed * boostAmount;
+        Debug.Log ("+" + boostAmount + "Speed");
+
+    }
+
+        public void ResetSpeed()
+    {
+        moveSpeed = originalMoveSpeed; // Reset the move speed to the original value
+    }
 }
