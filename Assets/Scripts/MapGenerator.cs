@@ -11,19 +11,19 @@ public class MapGenerator : MonoBehaviour
     public float roomWidth = 50.0f;
     public float roomHeight = 50.0f;
     private Room[,] grid;
-//     public int mapSeed;
+    public int mapSeed;
 
-//     //bools for designers
-//     public bool isMapOfTheDay = false;
-//     public bool isRandomMap = false;
+    //bools for designers
+    public bool isMapOfTheDay = false;
+    public bool isRandomMap = false;
 
 
-//     //helper funciton
-//     public int DateToInt ( DateTime dateToUse)
-//     {
-//         //add our date up and return it
-//         return dateToUse.Year + dateToUse.Month + dateToUse.Day + dateToUse.Hour + dateToUse.Minute + dateToUse.Second + dateToUse.Millisecond;
-//  }
+    //helper funciton
+    public int DateToInt ( DateTime dateToUse)
+    {
+        //add our date up and return it
+        return dateToUse.Year + dateToUse.Month + dateToUse.Day + dateToUse.Hour + dateToUse.Minute + dateToUse.Second + dateToUse.Millisecond;
+ }
 
 
 
@@ -44,31 +44,31 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        // // Check if we want a random map or the map of the day
-        // if (isRandomMap)
-        // {
-        //     // Set the random seed based on the current date and time
-        //     UnityEngine.Random.InitState(DateToInt(DateTime.Now));
-        // }
-        // else if (isMapOfTheDay)
-        // {
-        //     // Set the seed based on the date only (same map every day)
-        //     mapSeed = DateToInt(DateTime.Now.Date);
-        //     UnityEngine.Random.InitState(mapSeed);
-        // }
-        // else
-        // {
-        //     // Use the provided mapSeed value (if non-zero)
-        //     if (mapSeed != 0)
-        //     {
-        //         UnityEngine.Random.InitState(mapSeed);
-        //     }
-        //     else
-        //     {
-        //         // Default to a random map if no option is selected
-        //         UnityEngine.Random.InitState(DateToInt(DateTime.Now));
-        //     }
-        // }
+        // Check if we want a random map or the map of the day
+        if (isRandomMap)
+        {
+            // Set the random seed based on the current date and time
+            UnityEngine.Random.InitState(DateToInt(DateTime.Now));
+        }
+        else if (isMapOfTheDay)
+        {
+            // Set the seed based on the date only (same map every day)
+            mapSeed = DateToInt(DateTime.Now.Date);
+            UnityEngine.Random.InitState(mapSeed);
+        }
+        else
+        {
+            // Use the provided mapSeed value (if non-zero)
+            if (mapSeed != 0)
+            {
+                UnityEngine.Random.InitState(mapSeed);
+            }
+            else
+            {
+                // Default to a random map if no option is selected
+                UnityEngine.Random.InitState(DateToInt(DateTime.Now));
+            }
+        }
 
         //clear out the grid - column is our X, Row is our Y
         grid = new Room[cols,rows];
