@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    //mapgenerator
+    private MapGenerator mapGenerator;
+
     //spawn transform
     public Transform playerSpawnTransform;
 
@@ -43,11 +46,15 @@ public class GameManager : MonoBehaviour
 
         public void Start()
     {
+        mapGenerator = GetComponent<MapGenerator>();
+        // Call the GenerateMap function before spawning players
+        mapGenerator.GenerateMap();
+
         FindPawnSpawnPoints();
 
         SpawnPlayer();
 
-        SpawnAIUnits(2);
+        SpawnAIUnits(6);
     }
 
 
@@ -72,6 +79,7 @@ public class GameManager : MonoBehaviour
         if (pawnSpawnPoints.Count > 0)
         {
             int randomIndex = Random.Range(0, pawnSpawnPoints.Count);
+
             return pawnSpawnPoints[randomIndex];
         }
         else
@@ -129,6 +137,9 @@ public class GameManager : MonoBehaviour
 
     public void SpawnAIUnits(int count)
     {
+        //get players pawn
+        Pawn playerPawn = FindObjectOfType<PlayerController>().pawn;
+
         for (int i = 0; i < count; i++)
         {
             //instantiate AI controller
@@ -142,6 +153,9 @@ public class GameManager : MonoBehaviour
 
             //associate pawn w controller
             aiController.pawn = aiPawn;
+
+            //set the target for AIcontroller to be playerpawn
+            aiController.target = playerPawn.gameObject;
 
             //Pass any additional data from the soawn opint  to the ai controlelr
             aiController.SetupFromSpawnPoint(spawnPoint);

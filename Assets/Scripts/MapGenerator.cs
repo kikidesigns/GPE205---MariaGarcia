@@ -12,6 +12,7 @@ public class MapGenerator : MonoBehaviour
     public float roomHeight = 50.0f;
     private Room[,] grid;
     public int mapSeed;
+    public int presetSeed;
 
     //bools for designers
     public bool isMapOfTheDay = false;
@@ -44,31 +45,36 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        // Check if we want a random map or the map of the day
-        if (isRandomMap)
+    // Check if we want a random map or the map of the day
+    if (isRandomMap)
+    {
+        // Set the random seed based on the current date and time
+        UnityEngine.Random.InitState(DateToInt(DateTime.Now));
+    }
+    else if (isMapOfTheDay)
+    {
+        // Set the seed based on the date only (same map every day)
+        mapSeed = DateToInt(DateTime.Now.Date);
+        UnityEngine.Random.InitState(mapSeed);
+    }
+    else if (presetSeed != 0) // Check if a preset seed value is provided
+    {
+        // Use the preset seed value
+        UnityEngine.Random.InitState(presetSeed);
+    }
+    else
+    {
+        // Use the provided mapSeed value (if non-zero)
+        if (mapSeed != 0)
         {
-            // Set the random seed based on the current date and time
-            UnityEngine.Random.InitState(DateToInt(DateTime.Now));
-        }
-        else if (isMapOfTheDay)
-        {
-            // Set the seed based on the date only (same map every day)
-            mapSeed = DateToInt(DateTime.Now.Date);
             UnityEngine.Random.InitState(mapSeed);
         }
         else
         {
-            // Use the provided mapSeed value (if non-zero)
-            if (mapSeed != 0)
-            {
-                UnityEngine.Random.InitState(mapSeed);
-            }
-            else
-            {
-                // Default to a random map if no option is selected
-                UnityEngine.Random.InitState(DateToInt(DateTime.Now));
-            }
+            // Default to a random map if no option is selected
+            UnityEngine.Random.InitState(DateToInt(DateTime.Now));
         }
+    }
 
         //clear out the grid - column is our X, Row is our Y
         grid = new Room[cols,rows];

@@ -49,7 +49,7 @@ public class AIController : Controller
         //run parent start
         base.Start();
 
-        ChangeState(AIState.Seek);
+        ChangeState(AIState.GuardDesert);
     }
 
     // Update is called once per frame
