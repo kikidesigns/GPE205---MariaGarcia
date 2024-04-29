@@ -18,6 +18,22 @@ public class AIController : Controller
     //create a variable of this enum type
     public AIState currentState;
 
+
+    //spawn setup
+    public virtual void SetupFromSpawnPoint(PawnSpawnPoint spawnPoint)
+    {
+        //set intial pos and rot of ai
+        pawn.transform.position = spawnPoint.transform.position;
+        pawn.transform.rotation = spawnPoint.transform.rotation;
+
+        //find the player's pawn and set it as the target
+        TargetPlayerOne();
+
+    }
+
+
+
+
     // Start is called before the first frame update
     public override void Start()
     {      

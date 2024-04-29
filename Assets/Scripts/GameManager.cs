@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     //prefabs
     public GameObject playerControllerPrefab;
     public GameObject tankPawnPrefab;
+    public GameObject aiControllerPrefab;
     
     //list that holds players, controllers pawns
     public List<PlayerController> players;
     public List<Controller> controllers;
     public List<Pawn> pawns;
+
     //list to store pawnspawn point
     public List<PawnSpawnPoint> pawnSpawnPoints;
 
@@ -39,6 +41,45 @@ public class GameManager : MonoBehaviour
        }
     }
 
+        public void Start()
+    {
+        FindPawnSpawnPoints();
+
+        SpawnPlayer();
+
+        SpawnAIUnits(2);
+    }
+
+
+        private void FindPawnSpawnPoints()
+    {
+        pawnSpawnPoints.Clear(); // Clear the list first
+
+        // Find all PawnSpawnPoint components in the scene
+        PawnSpawnPoint[] spawnPoints = FindObjectsOfType<PawnSpawnPoint>();
+
+        // Add each PawnSpawnPoint to the list
+        foreach (PawnSpawnPoint spawnPoint in spawnPoints)
+        {
+            pawnSpawnPoints.Add(spawnPoint);
+        }
+    }
+
+
+
+    private PawnSpawnPoint GetRandomSpawnPoint()
+    {
+        if (pawnSpawnPoints.Count > 0)
+        {
+            int randomIndex = Random.Range(0, pawnSpawnPoints.Count);
+            return pawnSpawnPoints[randomIndex];
+        }
+        else
+        {
+            Debug.LogWarning("No spawn points found for pawns.");
+            return null;
+        }
+    }
 
 
     public void SpawnPlayer()
@@ -46,45 +87,65 @@ public class GameManager : MonoBehaviour
 
         //spawn player at 000 no rotation
         
-        GameObject newPlayerObj = Instantiate(playerControllerPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+        GameObject playerControllerObj = Instantiate(playerControllerPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+
+        //claude added this line
+        PlayerController playerController = playerControllerObj.GetComponent<PlayerController>();
+
+        //get a random spawn point
+        PawnSpawnPoint spawnPoint = GetRandomSpawnPoint();
 
         //spawn pawn and connect to controller
-        GameObject newPawnObj = Instantiate(tankPawnPrefab, playerSpawnTransform.position, playerSpawnTransform.rotation) as GameObject;
+        GameObject playerPawnObj = Instantiate(tankPawnPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
 
-        //get player component and pawn component
-        Controller newController = newPlayerObj.GetComponent<Controller>();
-        Pawn newPawn = newPawnObj.GetComponent<Pawn>();
+        Pawn playerPawn = playerPawnObj.GetComponent<Pawn>();
 
-        //hook them up
-        newController.pawn = newPawn;
+        //associate pawn w controller
+
+        playerController.pawn = playerPawn;
+
 
         // Get the CameraFollow component from the main camera
         CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
 
         // Assign the player's tankpawn transform to the CameraFollow target
-        cameraFollow.target = newPawnObj.transform;
+        cameraFollow.target = playerPawnObj.transform;
 
 
-        //claude's idea 
-        //get the tankShooter ocmponent from the instatiated TankPawn
-        TankShooter tankShooter = newPawnObj.GetComponent<TankShooter>();
-        //create a new game object for the firepoint
+        // Claude's idea
+        // Get the tankShooter component from the instantiated TankPawn
+        TankShooter tankShooter = playerPawnObj.GetComponent<TankShooter>();
+        // Create a new game object for the firepoint
         GameObject firePoint = new GameObject("FirePoint");
-        //set the position of firepoint relative to the tankpawn
-        firePoint.transform.position = newPawnObj.transform.position + new Vector3(0,.6f,1.35f);
-        //make the firepoint a child of tankpawn
-        firePoint.transform.parent = newPawnObj.transform;
-        //assign the firepoints transform to the friepoint transform variable
+        // Set the position of firepoint relative to the tankpawn
+        firePoint.transform.position = playerPawnObj.transform.position + new Vector3(0, .6f, 1.35f);
+        // Make the firepoint a child of tankpawn
+        firePoint.transform.parent = playerPawnObj.transform;
+        // Assign the firepoint's transform to the firepoint transform variable
         tankShooter.firepointTransform = firePoint.transform;
 
 
     }
-        public void Start()
+
+    public void SpawnAIUnits(int count)
     {
-        //temp code
-        SpawnPlayer();
+        for (int i = 0; i < count; i++)
+        {
+            //instantiate AI controller
+            GameObject aiControllerObj = Instantiate(aiControllerPrefab, Vector3.zero,Quaternion.identity);
+            AIController aiController = aiControllerObj.GetComponent<AIController>();
+            //get random spawn point
+            PawnSpawnPoint spawnPoint = GetRandomSpawnPoint();
+            //instantiate the AI pawn
+            GameObject aiPawnObj = Instantiate (tankPawnPrefab, spawnPoint.transform.position,spawnPoint.transform.rotation);
+            Pawn aiPawn = aiPawnObj.GetComponent<Pawn>();
 
+            //associate pawn w controller
+            aiController.pawn = aiPawn;
 
+            //Pass any additional data from the soawn opint  to the ai controlelr
+            aiController.SetupFromSpawnPoint(spawnPoint);
+        }
     }
 
 
