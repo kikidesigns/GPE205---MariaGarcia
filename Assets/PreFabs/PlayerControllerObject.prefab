@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7880220726358646234}
   - component: {fileID: 8861191554424361115}
+  - component: {fileID: 7185065398874394562}
   m_Layer: 0
   m_Name: PlayerControllerObject
   m_TagString: Untagged
@@ -50,3 +51,15 @@ MonoBehaviour:
   rotateClockwiseKey: 100
   rotateCounterClockwiseKey: 97
   shootKey: 32
+--- !u!114 &7185065398874394562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813608398891300116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a6ea86e54378744adf8bf01f1c420e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

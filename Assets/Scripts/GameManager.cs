@@ -97,6 +97,9 @@ public void ActivatePlayScreen()
     SpawnPlayer();
 
     SpawnAIUnits(2);
+
+
+
     // Any additional setup required for the gameplay state
 }
 
@@ -212,7 +215,7 @@ private void ResetGameState()
         
         GameObject playerControllerObj = Instantiate(playerControllerPrefab, Vector3.zero, Quaternion.identity) as GameObject;
 
-        //claude added this line
+        // Get the PlayerController component from the instantiated game object
         PlayerController playerController = playerControllerObj.GetComponent<PlayerController>();
 
         //get a random spawn point
@@ -234,6 +237,11 @@ private void ResetGameState()
         // Assign the player's tankpawn transform to the CameraFollow target
         cameraFollow.target = playerPawnObj.transform;
 
+        ScoreComponent scoreComponent = playerController.GetComponent<ScoreComponent>();
+
+        // Set the currentScore to zero
+        scoreComponent.currentScore = 0;
+        
 
         // Claude's idea
         // Get the tankShooter component from the instantiated TankPawn
