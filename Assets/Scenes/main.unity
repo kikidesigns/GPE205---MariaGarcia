@@ -325,6 +325,50 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &739774403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739774405}
+  - component: {fileID: 739774404}
+  m_Layer: 0
+  m_Name: StateTransitionTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &739774404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739774403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf6f8dae0dd3134aa96a817f10bf059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &739774405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739774403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.884954, y: 0.99585783, z: -4.172065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &951351466
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,9 +962,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac025295fd51a340a0a6af0307eef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridPrefabs: []
-  rows: 0
-  cols: 0
+  gridPrefabs:
+  - {fileID: 7372997198859842632, guid: 75dbe2c3af0e4d24e9b2dfa0bac66b30, type: 3}
+  - {fileID: 1664289298971058651, guid: 5217c3d01966e08469333a6f301c3028, type: 3}
+  - {fileID: 2088046085178585357, guid: 660ef8c7e44cc6047a8f2675e567c23d, type: 3}
+  rows: 3
+  cols: 3
   roomWidth: 50
   roomHeight: 50
   mapSeed: 0
@@ -939,6 +986,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20dd9016d33a153408de39a92580104c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TitleGameStateObject: {fileID: 1012422529}
+  MainMenuGameStateObject: {fileID: 1784456340}
+  SettingsGameStateObject: {fileID: 1167604908}
+  PlayGameStateObject: {fileID: 1352311960}
+  GameOverGameStateObject: {fileID: 1529986162}
+  CreditsGameStateObject: {fileID: 1639875890}
   playerSpawnTransform: {fileID: 0}
   playerControllerPrefab: {fileID: 5813608398891300116, guid: d0d0f4005cb093e4fab3bdf9ba1d20ac, type: 3}
   tankPawnPrefab: {fileID: 6192806820656894308, guid: 93ad531b1c3d844418b6df062e3f5a49, type: 3}
@@ -1177,3 +1230,4 @@ SceneRoots:
   - {fileID: 1639875891}
   - {fileID: 1702742978}
   - {fileID: 1725341703}
+  - {fileID: 739774405}

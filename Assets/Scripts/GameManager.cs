@@ -80,6 +80,24 @@ public void ActivatePlayScreen()
     // Activate the play screen
     PlayGameStateObject.SetActive(true);
     // Do play screen stuff (if any)
+
+    // Clean up existing map and game objects
+    CleanupMap();
+    
+    // Call the GenerateMap function before spawning players
+    
+    mapGenerator = GetComponent<MapGenerator>();
+    mapGenerator.GenerateMap();
+
+    // Reset any game-related values (score, health, lives, etc.)
+    ResetGameState();
+    //Spawn player and AI
+    FindPawnSpawnPoints();
+
+    SpawnPlayer();
+
+    SpawnAIUnits(2);
+    // Any additional setup required for the gameplay state
 }
 
 public void ActivateGameOverScreen()
@@ -100,6 +118,23 @@ public void ActivateCreditsScreen()
     // Do credits screen stuff (if any)
 }
 
+private void CleanupMap()
+{
+    // Destroy all existing room game objects
+    foreach (Transform child in this.transform)
+    {
+        Destroy(child.gameObject);
+    }
+
+    // Clear the pawnSpawnPoints list
+    pawnSpawnPoints.Clear();
+}
+
+private void ResetGameState()
+{
+    // Reset score, health, lives, or any other game state variables
+    Debug.Log("Scores RESET");
+}
 
 
 
@@ -126,15 +161,15 @@ public void ActivateCreditsScreen()
         //start game in correct state
         ActivateTitleScreen();
 
-        mapGenerator = GetComponent<MapGenerator>();
+        // mapGenerator = GetComponent<MapGenerator>();
         // Call the GenerateMap function before spawning players
-        mapGenerator.GenerateMap();
+        // mapGenerator.GenerateMap();
 
-        FindPawnSpawnPoints();
+        // FindPawnSpawnPoints();
 
-        SpawnPlayer();
+        // SpawnPlayer();
 
-        SpawnAIUnits(1);
+        // SpawnAIUnits(1);
     }
 
 
