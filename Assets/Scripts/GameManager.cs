@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject MainMenuGameStateObject;
     public GameObject SettingsGameStateObject;
     public GameObject PlayGameStateObject;
-    public GameObjec GameOverGameStateObject;
+    public GameObject GameOverGameStateObject;
     public GameObject CreditsGameStateObject;
 
 
@@ -123,6 +123,9 @@ public void ActivateCreditsScreen()
 
         public void Start()
     {
+        //start game in correct state
+        ActivateTitleScreen();
+
         mapGenerator = GetComponent<MapGenerator>();
         // Call the GenerateMap function before spawning players
         mapGenerator.GenerateMap();
