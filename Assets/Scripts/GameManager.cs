@@ -6,6 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    //Game States
+    public GameObject TitleGameStateObject;
+    public GameObject MainMenuGameStateObject;
+    public GameObject SettingsGameStateObject;
+    public GameObject PlayGameStateObject;
+    public GameObjec GameOverGameStateObject;
+    public GameObject CreditsGameStateObject;
+
+
     //mapgenerator
     private MapGenerator mapGenerator;
 
@@ -24,6 +33,74 @@ public class GameManager : MonoBehaviour
 
     //list to store pawnspawn point
     public List<PawnSpawnPoint> pawnSpawnPoints;
+
+
+    //helper function:
+    private void DeactivateAllStates()
+    {
+        TitleGameStateObject.SetActive(false);
+        MainMenuGameStateObject.SetActive(false);
+        SettingsGameStateObject.SetActive(false);
+        PlayGameStateObject.SetActive(false);
+        GameOverGameStateObject.SetActive(false);
+        CreditsGameStateObject.SetActive(false);
+    }
+
+public void ActivateTitleScreen()
+{
+    // Deactivate all states
+    DeactivateAllStates();
+    // Activate the title screen
+    TitleGameStateObject.SetActive(true);
+    // Do title screen stuff (if any)
+}
+
+public void ActivateMainMenuScreen()
+{
+    // Deactivate all states
+    DeactivateAllStates();
+    // Activate the main menu screen
+    MainMenuGameStateObject.SetActive(true);
+    // Do main menu screen stuff (if any)
+}
+
+public void ActivateSettingsScreen()
+{
+    // Deactivate all states
+    DeactivateAllStates();
+    // Activate the settings screen
+    SettingsGameStateObject.SetActive(true);
+    // Do settings screen stuff (if any)
+}
+
+public void ActivatePlayScreen()
+{
+    // Deactivate all states
+    DeactivateAllStates();
+    // Activate the play screen
+    PlayGameStateObject.SetActive(true);
+    // Do play screen stuff (if any)
+}
+
+public void ActivateGameOverScreen()
+{
+    // Deactivate all states
+    DeactivateAllStates();
+    // Activate the game over screen
+    GameOverGameStateObject.SetActive(true);
+    // Do game over screen stuff (if any)
+}
+
+public void ActivateCreditsScreen()
+{
+    // Deactivate all states
+    DeactivateAllStates();
+    // Activate the credits screen
+    CreditsGameStateObject.SetActive(true);
+    // Do credits screen stuff (if any)
+}
+
+
 
 
     // awake is called before start can run
