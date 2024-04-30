@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2385708566042220830}
   - component: {fileID: 7769818498598473802}
+  - component: {fileID: -3389238758590811586}
   m_Layer: 0
   m_Name: AIControllerObjPrefab
   m_TagString: Untagged
@@ -48,3 +49,18 @@ MonoBehaviour:
   runAwayDistance: 0
   target: {fileID: 0}
   currentState: 2
+--- !u!114 &-3389238758590811586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318864590423645957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a6ea86e54378744adf8bf01f1c420e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: 0
+  maxScore: 100
+  minScore: 0
