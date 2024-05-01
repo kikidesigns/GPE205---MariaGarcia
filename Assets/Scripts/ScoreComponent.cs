@@ -22,7 +22,7 @@ public class ScoreComponent : MonoBehaviour
 
     public void AddToScore (float scoreAddAmount)
     {
-        currentScore = currentScore - scoreAddAmount;
+        currentScore = currentScore + scoreAddAmount;
         Debug.Log("+" + scoreAddAmount + "points for" + gameObject.name);
 
     }

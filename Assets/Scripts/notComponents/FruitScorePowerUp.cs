@@ -12,19 +12,27 @@ public class FruitScorePowerUp : PowerUp
     public override void Apply(PowerUpManager target)
     {
         Debug.Log("FRUITPOWERAPPLY");
-        //TODO apply SCORE changes
-        ScoreComponent targetScore = target.GetComponent<ScoreComponent>();
-        if (targetScore != null)
+
+        // Get the associated controller from the PowerUpManager
+        Controller controller = target.GetComponent<Pawn>().controller;
+        
+        if (controller != null)
         {
-            Debug.Log("Here");
-            
-            targetScore.AddToScore(scoreToAdd);
-            Debug.Log("score powerup");
+            // Get the ScoreComponent from the associated controller
+            ScoreComponent scoreComponent = controller.GetComponent<ScoreComponent>();
+            if (scoreComponent != null)
+            {
+                Debug.Log("Here");
+                
+                scoreComponent.AddToScore(scoreToAdd);
+                Debug.Log("Score power-up applied.");
+            }
+            else
+            {
+                Debug.Log("no targetscore");
+            }
         }
-        else
-        {
-            Debug.Log("no targetscore");
-        }
+
     }
 
 
