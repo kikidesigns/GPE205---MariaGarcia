@@ -15,6 +15,8 @@ public abstract class Pawn : MonoBehaviour
     public Mover mover;
     //variable to hold our shooter
     public Shooter shooter;
+    //variable to holdd controller
+    public Controller controller;
 
     
 

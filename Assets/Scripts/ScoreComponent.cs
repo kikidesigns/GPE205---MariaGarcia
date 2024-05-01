@@ -24,17 +24,9 @@ public class ScoreComponent : MonoBehaviour
     {
         currentScore = currentScore - scoreAddAmount;
         Debug.Log("+" + scoreAddAmount + "points for" + gameObject.name);
-        if (currentScore >= 20)
-        {
-            Win();
-        }
+
     }
 
-    public void Win ()
-    {
-        Debug.Log("You Won The Game");
-        Destroy (gameObject);
-    }
 
 
 }

@@ -229,6 +229,7 @@ private void ResetGameState()
         //associate pawn w controller
 
         playerController.pawn = playerPawn;
+        playerPawn.controller = playerController; // Assign the controller to the pawn
 
 
         // Get the CameraFollow component from the main camera
@@ -276,6 +277,8 @@ private void ResetGameState()
 
             //associate pawn w controller
             aiController.pawn = aiPawn;
+
+            aiPawn.controller = aiController; // Assign the controller to the pawn
 
             //set the target for AIcontroller to be playerpawn
             aiController.target = playerPawn.gameObject;

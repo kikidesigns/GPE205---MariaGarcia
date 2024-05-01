@@ -43,6 +43,8 @@ public class PowerUpManager : MonoBehaviour
         powerUpToAdd.Apply(this);
         //save it to the list
         powerUps.Add(powerUpToAdd);
+        //
+        Debug.Log("popwerup processed by manager");
     }
 
     //the remove function will eventually remove a powerup
