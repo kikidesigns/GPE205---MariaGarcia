@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7880220726358646234}
   - component: {fileID: 8861191554424361115}
   - component: {fileID: 7185065398874394562}
+  - component: {fileID: -2814964256534577874}
   m_Layer: 0
   m_Name: PlayerControllerObject
   m_TagString: Untagged
@@ -66,3 +67,18 @@ MonoBehaviour:
   currentScore: 0
   maxScore: 100
   minScore: 0
+--- !u!114 &-2814964256534577874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813608398891300116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223c30e8af30e6e46a54988425ffd602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLives: 3
+  maxLives: 3
+  minLives: 0

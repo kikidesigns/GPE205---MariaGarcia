@@ -218,43 +218,78 @@ private void ResetGameState()
         // Get the PlayerController component from the instantiated game object
         PlayerController playerController = playerControllerObj.GetComponent<PlayerController>();
 
-        //get a random spawn point
-        PawnSpawnPoint spawnPoint = GetRandomSpawnPoint();
+        // Get the LivesComponent from the PlayerController
+        LivesComponent playerLivesComponent = playerController.GetComponent<LivesComponent>();
 
-        //spawn pawn and connect to controller
-        GameObject playerPawnObj = Instantiate(tankPawnPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+        //check lives
+        if(playerLivesComponent.currentLives > 0 )
+        {
+            //get a random spawn point
+            PawnSpawnPoint spawnPoint = GetRandomSpawnPoint();
 
-        Pawn playerPawn = playerPawnObj.GetComponent<Pawn>();
+            //spawn pawn and connect to controller
+            GameObject playerPawnObj = Instantiate(tankPawnPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
 
-        //associate pawn w controller
+            Pawn playerPawn = playerPawnObj.GetComponent<Pawn>();
+            //associate pawn w controller
 
-        playerController.pawn = playerPawn;
-        playerPawn.controller = playerController; // Assign the controller to the pawn
+            playerController.pawn = playerPawn;
+            playerPawn.controller = playerController; // Assign the controller to the pawn
+
+            // Get the CameraFollow component from the main camera
+            CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
+
+            // Assign the player's tankpawn transform to the CameraFollow target
+            cameraFollow.target = playerPawnObj.transform;
+
+            ScoreComponent scoreComponent = playerController.GetComponent<ScoreComponent>();
+
+            // Set the currentScore to zero
+            scoreComponent.currentScore = 0;
 
 
-        // Get the CameraFollow component from the main camera
-        CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
+            // Get all AIController components in the scene
+            AIController[] aiControllers = FindObjectsOfType<AIController>();
 
-        // Assign the player's tankpawn transform to the CameraFollow target
-        cameraFollow.target = playerPawnObj.transform;
+            // Update the target of each AIController to the newly spawned player's tank pawn
+            foreach (AIController aiController in aiControllers)
+            {
+                aiController.target = playerPawnObj;
+            }
 
-        ScoreComponent scoreComponent = playerController.GetComponent<ScoreComponent>();
 
-        // Set the currentScore to zero
-        scoreComponent.currentScore = 0;
+            // Claude's idea
+            // Get the tankShooter component from the instantiated TankPawn
+            TankShooter tankShooter = playerPawnObj.GetComponent<TankShooter>();
+            // Create a new game object for the firepoint
+            GameObject firePoint = new GameObject("FirePoint");
+            // Set the position of firepoint relative to the tankpawn
+            firePoint.transform.position = playerPawnObj.transform.position + new Vector3(0, .6f, 1.35f);
+            // Make the firepoint a child of tankpawn
+            firePoint.transform.parent = playerPawnObj.transform;
+            // Assign the firepoint's transform to the firepoint transform variable
+            tankShooter.firepointTransform = firePoint.transform;
+        }
+        else
+        {
+            // No lives left, handle game over
+            //ActivateGameOverScreen();
+
+            Debug.Log("no lives left");
+        
+            // Destroy the spawned PlayerController since there are no lives left
+            Destroy(playerControllerObj);
+        }
+
+       
+
+
+
+
+        
         
 
-        // Claude's idea
-        // Get the tankShooter component from the instantiated TankPawn
-        TankShooter tankShooter = playerPawnObj.GetComponent<TankShooter>();
-        // Create a new game object for the firepoint
-        GameObject firePoint = new GameObject("FirePoint");
-        // Set the position of firepoint relative to the tankpawn
-        firePoint.transform.position = playerPawnObj.transform.position + new Vector3(0, .6f, 1.35f);
-        // Make the firepoint a child of tankpawn
-        firePoint.transform.parent = playerPawnObj.transform;
-        // Assign the firepoint's transform to the firepoint transform variable
-        tankShooter.firepointTransform = firePoint.transform;
+
 
 
     }
@@ -321,5 +356,34 @@ private void ResetGameState()
         }
     }
 
+        public void PlayerDied()
+    {
+        // Get the PlayerController component
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+
+        if (playerController != null)
+        {
+            // Get the LivesComponent from the PlayerController
+            LivesComponent livesComponent = playerController.GetComponent<LivesComponent>();
+
+            if (livesComponent != null)
+            {
+                // Call the loseLife method
+                livesComponent.loseLife();
+
+                // Check if the player has any lives remaining
+                if (livesComponent.currentLives <= 0)
+                {
+                    // Player has no lives left, trigger game over
+                    ActivateGameOverScreen();
+                }
+                else
+                {
+                    // Player still has lives, respawn the player
+                    SpawnPlayer();
+                }
+            }
+        }
+    }
 
 }

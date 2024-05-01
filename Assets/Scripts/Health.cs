@@ -33,6 +33,10 @@ public class Health : MonoBehaviour
     public void Die (Pawn source)
     {
         Debug.Log("Dead");
+
+        // Notify the GameManager that the player's pawn has died
+        GameManager.instance.PlayerDied();
+
         Destroy (gameObject);
     }
 
