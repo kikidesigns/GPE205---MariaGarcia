@@ -96,7 +96,7 @@ public void ActivatePlayScreen()
 
     SpawnPlayer();
 
-    SpawnAIUnits(2);
+    SpawnAIUnits(8);
 
 
 
@@ -137,6 +137,16 @@ private void ResetGameState()
 {
     // Reset score, health, lives, or any other game state variables
     Debug.Log("Scores RESET");
+}
+
+public void QuitGame()
+{
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
+        Debug.Log("QuitGame");
 }
 
 
