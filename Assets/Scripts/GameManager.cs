@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject GameOverGameStateObject;
     public GameObject CreditsGameStateObject;
 
-
+    //audiomanagervariaeble
+    private AudioManager audioManager;
 
     //mapgenerator
     private MapGenerator mapGenerator;
@@ -165,6 +166,8 @@ public void QuitGame()
         instance = this;
         //dont destroy it if we load a new scene
         DontDestroyOnLoad (gameObject);
+        // Initialize the audioManager instance
+        audioManager = AudioManager.Instance;
        }
        else 
        {
@@ -245,6 +248,11 @@ public void QuitGame()
             GameObject playerPawnObj = Instantiate(tankPawnPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
 
             Pawn playerPawn = playerPawnObj.GetComponent<Pawn>();
+
+            //play sound effect
+            audioManager.PlaySFX(audioManager.spawnClip);
+
+            Debug.Log("play clip here");
 
             // Instantiate the camera prefab as a child of the player's pawn
             GameObject cameraObj = Instantiate(cameraPrefab, playerPawnObj.transform.position, playerPawnObj.transform.rotation, playerPawnObj.transform);

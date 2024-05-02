@@ -1709,7 +1709,7 @@ AudioSource:
   m_GameObject: {fileID: 1546831444}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -938460441090216762, guid: e50ea81c4562ada4f860a5456bb90f9b, type: 2}
   m_audioClip: {fileID: 8300000, guid: e14ad6cc3bea18747862b57105535e36, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.149
@@ -2291,6 +2291,7 @@ GameObject:
   - component: {fileID: 1702742978}
   - component: {fileID: 1702742977}
   - component: {fileID: 1702742976}
+  - component: {fileID: 1702742979}
   m_Layer: 0
   m_Name: GameManagerObjMain
   m_TagString: Untagged
@@ -2365,6 +2366,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1702742979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702742975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80243f0c7a3f14940af8ffcbc31053f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxGroup: {fileID: 8510488244585228755, guid: e50ea81c4562ada4f860a5456bb90f9b, type: 2}
+  tankFireClip: {fileID: 8300000, guid: aabfd2f85479bc94f8f4f59bfa3d1c78, type: 3}
+  tankDeathClip: {fileID: 8300000, guid: 95517238cbba87349ae060f6468c73e4, type: 3}
+  bulletHitClip: {fileID: 8300000, guid: 75147d0d5ab650b47aca6e4f14fe4cfc, type: 3}
+  powerupClip: {fileID: 8300000, guid: 68f00e54e31d26242aaa95faaa120576, type: 3}
+  buttonClickClip: {fileID: 8300000, guid: cf9289337cc91184dbeb621a41e5aa05, type: 3}
+  spawnClip: {fileID: 8300000, guid: e480b3742e640b646b9798c36bb87aa5, type: 3}
 --- !u!1 &1725341700
 GameObject:
   m_ObjectHideFlags: 0
