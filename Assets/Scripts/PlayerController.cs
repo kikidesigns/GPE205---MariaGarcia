@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class PlayerController : Controller
@@ -10,6 +11,9 @@ public class PlayerController : Controller
     public KeyCode rotateClockwiseKey;
     public KeyCode rotateCounterClockwiseKey;
     public KeyCode shootKey;
+
+    public TextMeshPro scoreText;
+    public TextMeshPro livesText;
 
     // Start is called before the first frame update
     public override void Start()

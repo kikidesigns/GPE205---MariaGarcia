@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject CreditsGameStateObject;
 
 
+
     //mapgenerator
     private MapGenerator mapGenerator;
 
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
     public GameObject playerControllerPrefab;
     public GameObject tankPawnPrefab;
     public GameObject aiControllerPrefab;
+    public GameObject cameraPrefab;
+    public GameObject canvasPrefab;
+
     
     //list that holds players, controllers pawns
     public List<PlayerController> players;
@@ -237,20 +241,37 @@ public void QuitGame()
             //get a random spawn point
             PawnSpawnPoint spawnPoint = GetRandomSpawnPoint();
 
-            //spawn pawn and connect to controller
+            //instantiate the player pawn and connect to controller
             GameObject playerPawnObj = Instantiate(tankPawnPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
 
             Pawn playerPawn = playerPawnObj.GetComponent<Pawn>();
+
+            // Instantiate the camera prefab as a child of the player's pawn
+            GameObject cameraObj = Instantiate(cameraPrefab, playerPawnObj.transform.position, playerPawnObj.transform.rotation, playerPawnObj.transform);
+            // Set the camera's position relative to the player pawn
+            cameraObj.transform.localPosition = new Vector3(0, 2, -5);
+
+            // Instantiate the Canvas prefab as a child of the player's pawn
+            GameObject canvasObj = Instantiate(canvasPrefab, playerPawnObj.transform.position, playerPawnObj.transform.rotation, playerPawnObj.transform);
+
+            // Get the Canvas component from the instantiated Canvas prefab
+            Canvas canvas = canvasObj.GetComponent<Canvas>();
+
+            // Set the render mode to ScreenSpaceCamera
+            canvas.renderMode = RenderMode.ScreenSpaceCamera;
+
+            // Get the Camera component from the instantiated camera object
+            Camera playerCamera = cameraObj.GetComponent<Camera>();
+
+            // Assign the player camera to the worldCamera property of the Canvas
+            canvas.worldCamera = playerCamera;
+
             //associate pawn w controller
 
             playerController.pawn = playerPawn;
             playerPawn.controller = playerController; // Assign the controller to the pawn
 
-            // Get the CameraFollow component from the main camera
-            CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
 
-            // Assign the player's tankpawn transform to the CameraFollow target
-            cameraFollow.target = playerPawnObj.transform;
 
             ScoreComponent scoreComponent = playerController.GetComponent<ScoreComponent>();
 
