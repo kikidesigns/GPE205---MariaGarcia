@@ -7,10 +7,13 @@ public class TankShooter : Shooter
     //declare firepointTransform variable
     public Transform firepointTransform;
 
+    private AudioManager audioManager;
+    public AudioClip shootSound;
+
     // Start is called before the first frame update
     public override void Start()
     {
-        
+        audioManager = AudioManager.Instance;
     }
 
     // Update is called once per frame
@@ -24,6 +27,10 @@ public class TankShooter : Shooter
     {
         //instantiate projectile
         GameObject newShell = Instantiate(shellPrefab, firepointTransform.position, firepointTransform.rotation) as GameObject;
+
+        //audio
+        audioManager.PlaySFX(shootSound);
+
 
         //get DamageOnHit component
         DamageOnHit doh = newShell.GetComponent<DamageOnHit>();

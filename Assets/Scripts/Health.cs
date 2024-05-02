@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     public Image healthBarImage;
     private AudioManager audioManager;
     public AudioClip damageSound;
+    public AudioClip deathSound;
 
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class Health : MonoBehaviour
     public void Die (Pawn source)
     {
         Debug.Log("Dead");
+        audioManager.PlaySFX(deathSound);
 
         // Notify the GameManager that the player's pawn has died
         GameManager.instance.PlayerDied();

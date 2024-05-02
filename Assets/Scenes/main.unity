@@ -3620,7 +3620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxVolumeSlider: {fileID: 0}
-  tankFireClip: {fileID: 8300000, guid: aabfd2f85479bc94f8f4f59bfa3d1c78, type: 3}
+  tankFireClip: {fileID: 8300000, guid: 4ac32bc55eda6ca4cbbbea4c6cced850, type: 3}
   tankDeathClip: {fileID: 8300000, guid: 95517238cbba87349ae060f6468c73e4, type: 3}
   bulletHitClip: {fileID: 8300000, guid: 75147d0d5ab650b47aca6e4f14fe4cfc, type: 3}
   powerupClip: {fileID: 8300000, guid: 68f00e54e31d26242aaa95faaa120576, type: 3}
