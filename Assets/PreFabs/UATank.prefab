@@ -375,11 +375,6 @@ MonoBehaviour:
   currentHealth: 10
   maxHealth: 100
   healthBarImage: {fileID: 2345144244299367556}
-<<<<<<< Updated upstream
-=======
-  damageSound: {fileID: 8300000, guid: 75147d0d5ab650b47aca6e4f14fe4cfc, type: 3}
-  deathSound: {fileID: 8300000, guid: 95517238cbba87349ae060f6468c73e4, type: 3}
->>>>>>> Stashed changes
 --- !u!114 &-4379797687651367065
 MonoBehaviour:
   m_ObjectHideFlags: 0

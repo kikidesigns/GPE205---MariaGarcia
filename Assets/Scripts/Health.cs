@@ -9,13 +9,10 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
     public Image healthBarImage;
-<<<<<<< Updated upstream
-
-=======
     private AudioManager audioManager;
     public AudioClip damageSound;
     public AudioClip deathSound;
->>>>>>> Stashed changes
+
 
 
     // Start is called before the first frame update

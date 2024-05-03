@@ -2378,7 +2378,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80243f0c7a3f14940af8ffcbc31053f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 1299229 (on hit sounds)
   sfxGroup: {fileID: 8510488244585228755, guid: e50ea81c4562ada4f860a5456bb90f9b, type: 2}
   tankFireClip: {fileID: 8300000, guid: aabfd2f85479bc94f8f4f59bfa3d1c78, type: 3}
 =======
