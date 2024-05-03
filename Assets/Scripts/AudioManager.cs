@@ -1,11 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class AudioManager : MonoBehaviour
 {
-    public Slider sfxVolumeSlider;
-
     private static AudioManager instance;
     public static AudioManager Instance
     {
@@ -52,10 +48,5 @@ public class AudioManager : MonoBehaviour
 
         Debug.Log($"AudioManager: Playing sound effect {clip.name} at volume {sfxVolume}");
         AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, sfxVolume);
-    }
-
-    public void UpdateSFXVolume(float value)
-    {
-        sfxVolume = value;
     }
 }

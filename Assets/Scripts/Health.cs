@@ -9,8 +9,7 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
     public Image healthBarImage;
-    private AudioManager audioManager;
-    public AudioClip damageSound;
+
 
 
     // Start is called before the first frame update
@@ -19,7 +18,6 @@ public class Health : MonoBehaviour
         //set health to max
         currentHealth = maxHealth;
         UpdateHealthBar();
-        audioManager = AudioManager.Instance;
     }
 
     // Update is called once per frame
@@ -30,7 +28,6 @@ public class Health : MonoBehaviour
 
     public void TakeDamage (float damageAmount, Pawn source)
     {
-        audioManager.PlaySFX(damageSound);
         currentHealth = currentHealth - damageAmount;
         currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
         Debug.Log(source.name + "did" + damageAmount + "damage to" + gameObject.name);
