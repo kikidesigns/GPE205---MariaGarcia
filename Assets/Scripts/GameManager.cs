@@ -169,12 +169,12 @@ public void QuitGame()
         // Initialize the audioManager instance
         audioManager = AudioManager.Instance;
        }
-       else 
-       {
-            //otherwise there is already an instance so destroy this gameobject
-            Destroy(gameObject);
-       }
+       else if (instance != this)
+    {
+        Destroy(gameObject);
+        return;
     }
+}
 
         public void Start()
     {
