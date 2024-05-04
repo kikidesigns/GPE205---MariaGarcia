@@ -8,6 +8,9 @@ public class HealthPickUp : MonoBehaviour
     //variable to hold data for the powerup that our tabks will get
     public HealthPowerUp powerUp;
 
+    //audioclip variable
+    public AudioClip powerupSound;
+
     //on collision
     public void OnTriggerEnter(Collider other)
     {
@@ -20,6 +23,8 @@ public class HealthPickUp : MonoBehaviour
         {
             //add the powerup
             powerUpManager.Add(powerUp);
+            // Play the powerup sound using the SFX group
+            AudioManager.Instance.PlaySFX(powerupSound);
 
             //destroy this pickup
            Destroy(gameObject);
