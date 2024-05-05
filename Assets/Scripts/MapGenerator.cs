@@ -14,6 +14,8 @@ public class MapGenerator : MonoBehaviour
     public int mapSeed;
     public int presetSeed;
 
+
+
     //bools for designers
     public bool isMapOfTheDay = false;
     public bool isRandomMap = false;
@@ -45,6 +47,7 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
+        
     // Check if we want a random map or the map of the day
     if (isRandomMap)
     {

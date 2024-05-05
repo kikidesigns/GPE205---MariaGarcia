@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b22a134e4977645a824d0237942d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10
+  currentHealth: 100
   maxHealth: 100
   healthBarImage: {fileID: 2345144244299367556}
   damageSound: {fileID: 8300000, guid: 75147d0d5ab650b47aca6e4f14fe4cfc, type: 3}

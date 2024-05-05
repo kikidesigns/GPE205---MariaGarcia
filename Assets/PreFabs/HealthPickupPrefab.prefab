@@ -124,7 +124,7 @@ MonoBehaviour:
   powerUp:
     duration: 0
     isPermanent: 1
-    healthToAdd: 11
+    healthToAdd: 15
   powerupSound: {fileID: 8300000, guid: 68f00e54e31d26242aaa95faaa120576, type: 3}
 --- !u!114 &-8558568142709843895
 MonoBehaviour:

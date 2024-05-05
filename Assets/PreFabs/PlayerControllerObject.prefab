@@ -52,6 +52,8 @@ MonoBehaviour:
   rotateClockwiseKey: 100
   rotateCounterClockwiseKey: 97
   shootKey: 32
+  scoreText: {fileID: 0}
+  livesText: {fileID: 0}
 --- !u!114 &7185065398874394562
 MonoBehaviour:
   m_ObjectHideFlags: 0
