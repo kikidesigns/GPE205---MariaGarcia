@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public GameObject SettingsGameStateObject;
     public GameObject PlayGameStateObject;
     public GameObject GameOverGameStateObject;
-    public GameObject CreditsGameStateObject;
 
     //audiomanagervariaeble
     private AudioManager audioManager;
@@ -48,7 +47,6 @@ public class GameManager : MonoBehaviour
         SettingsGameStateObject.SetActive(false);
         PlayGameStateObject.SetActive(false);
         GameOverGameStateObject.SetActive(false);
-        CreditsGameStateObject.SetActive(false);
     }
 
 public void ActivateTitleScreen()
@@ -117,14 +115,7 @@ public void ActivateGameOverScreen()
     // Do game over screen stuff (if any)
 }
 
-public void ActivateCreditsScreen()
-{
-    // Deactivate all states
-    DeactivateAllStates();
-    // Activate the credits screen
-    CreditsGameStateObject.SetActive(true);
-    // Do credits screen stuff (if any)
-}
+
 
 private void CleanupMap()
 {

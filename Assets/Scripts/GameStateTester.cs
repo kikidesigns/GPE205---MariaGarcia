@@ -43,11 +43,7 @@ public class GameStateTester : MonoBehaviour
             gameManager.ActivateGameOverScreen();
             Debug.Log("Activated GameOverScreen state");
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            gameManager.ActivateCreditsScreen();
-            Debug.Log("Activated CreditsScreen state");
-        }
+        
     }
 }
 
